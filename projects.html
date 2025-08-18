@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Designer & Front end Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('images/hot17.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .nav-tabs {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 40px;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #e207be;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #64ffda;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            transition: 0.3s;
+        }
+
+        /* Main Container */
+        .main-container {
+            padding-top: 80px;
+            min-height: 100vh;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(5px);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Header Section */
+        .projects-header {
+            text-align: left;
+            margin-bottom: 80px;
+            padding-left: 20px;
+        }
+
+        .projects-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: white; 
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Projects Layout */
+        .projects-layout {
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+            margin-bottom: 100px;
+        }
+
+        .featured-project {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+            min-height: 400px;
+        }
+
+        .featured-project:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .project-image-container {
+            flex: 1;
+            max-width: 500px;
+        }
+
+        .project-image {
+            width: 100%;
+            min-height: 300px;
+            max-height: 400px;
+            background: linear-gradient(135deg, black 0%, grey 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: white;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            border-radius: 15px;
+        }
+
+        .project-content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .project-label {
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: inline-block;
+            padding: 8px 16px;
+            background: linear-gradient(45deg, black, grey);
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .project-label:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .project-title {
+            font-size: 2.2rem;
+            color: white;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .project-description {
+            color: white;
+            line-height: 1.6;
+            font-size: 1rem;
+            margin-bottom: 25px;
+        }
+
+        .project-description ul {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .project-description li {
+            margin-bottom: 8px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .tech-tag {
+            background: grey;
+            color: black;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid rgb(189, 179, 179);
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(45deg, black, grey);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+
+        .status-live {
+            background: linear-gradient(45deg, black, grey);
+            color: white;
+        }
+
+        .status-coming-soon {
+            background: linear-gradient(45deg, black, grey);
+            color: white;
+        }
+
+        /* Services Section */
+        .services-section {
+            text-align: center;
+            padding: 80px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .services-header h2 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .services-subtitle {
+            font-size: 1.8rem;
+            color: white;
+            margin-bottom: 50px;
+            font-weight: 600;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .service-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;         
+            flex-direction: column;
+        }
+
+        .service-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(45deg, #e207be, #ff29db);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .service-item:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #e207be, #ff29db);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px auto;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .service-title {
+            font-size: 1.3rem;
+            color: white;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .service-description {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(45deg, #e207be, #ff29db);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(226, 7, 190, 0.3);
+        }
+
+        .service-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(226, 7, 190, 0.4);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background: rgba(0, 0, 0, 0.95);
+                flex-direction: column;
+                padding: 20px;
+                width: 200px;
+                border-radius: 0 0 0 10px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+
+            .projects-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .featured-project {
+                flex-direction: column !important;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .featured-project:nth-child(even) {
+                flex-direction: column !important;
+            }
+
+            .project-image-container {
+                max-width: 100%;
+            }
+
+            .project-title {
+                font-size: 1.8rem;
+            }
+
+            .tech-stack {
+                justify-content: center;
+            }
+
+            .services-header h2 {
+                font-size: 2.5rem;
+            }
+
+            .services-subtitle {
+                font-size: 1.4rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .nav-tabs {
+                padding: 15px 20px;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .container {
+                padding: 40px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .projects-header h1 {
+                font-size: 2rem;
+            }
+
+            .project-content {
+                padding: 15px;
+            }
+
+            .services-section {
+                padding: 60px 0;
+            }
+
+            .featured-project {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="nav-tabs">
+        <div class="logo">need a website?</div>
+        
+        <!-- Hamburger Menu -->
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="hireme.html">Hire Me</a>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <div class="container">
+            <!-- Header -->
+            <div class="projects-header">
+                <h1>Things I've worked on</h1>
+            </div>
+
+            <!-- Projects Layout -->
+            <div class="projects-layout">
+                <!-- Featured Project 1 -->
+                <div class="featured-project">
+                    <div class="project-image-container">
+                        <div class="project-image">
+                            <img src="images/gazilliongoals4.webp" alt="Gazillion Goals">
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-label">Featured Project</div>
+                        <h3 class="project-title">Gazillion Goals-Football Transfer News & Fan Experience Website</h3>
+                        <div class="project-description">
+                            <ul>
+                                <li>Gazillion Goals is a sleek, football-focused website designed to keep fans updated on the latest transfer news, player fashion highlights ("FitCheck"), and upcoming events.</li>
+                                <li>I built it with a focus on speed, responsiveness, and a smooth browsing experience across all devices.</li>
+                                <li>I looked at some top football websites for motivation and thought about special tabs to include.</li>
+                            </ul>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Git</span>
+                            <span class="tech-tag">Github</span>
+                        </div>
+                        <a href="https://gazillion-goals.netlify.app/" class="project-link" target="_blank">
+                            View Project
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="m9 18 6-6-6-6"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Featured Project 2 -->
+                <div class="featured-project">
+                    <div class="project-image-container">
+                        <div class="project-image">
+                            <img src="images/djwestdj.webp" alt="DJ Website">
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-label">Featured Project</div>
+                        <h3 class="project-title">DJ Website – Artist Profile & Booking</h3>
+                        <div class="project-description">
+                            <ul>
+                                <li>A modern fully responsive profile website created for a DJ to showcase their bio, music, and gigs, with a fully functional booking system that makes connecting with fans and event organizers effortless.</li>
+                                <li>The website acts as a digital portfolio, giving the artist a professional online presence.</li>
+                            </ul>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Formspree</span>
+                            <span class="tech-tag">Git</span>
+                            <span class="tech-tag">Github</span>
+                        </div>
+                        <a href="https://yourproject2.com" class="project-link" target="_blank">
+                            View Project
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="m9 18 6-6-6-6"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                 <!-- Featured Project 3 -->
+                <div class="featured-project">
+                    <div class="project-image-container">
+                        <div class="project-image">
+                            <img src="images/rabbitsecd1.webp" alt="Royal Rabbits">
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-label">Featured Project</div>
+                        <h3 class="project-title">Royal Rabbits Preschool Website</h3>
+                        <div class="project-description">
+                            <ul>
+                                <li>Royal Rabbits Preschool is a nurturing and joyful preschool community, and I created their multi-page website using my Frontend Web Development skills to build an engaging online presence that informs and connects with parents, partners, and supporters.</li>
+                                <li>The website is fully responsive, providing a smooth user experience across all devices.</li>
+                            </ul>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Git</span>
+                            <span class="tech-tag">Github</span>
+                        </div>
+                        <a href="https://yourproject3.com" class="project-link" target="_blank">
+                            View Project
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="m9 18 6-6-6-6"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Featured Project 4 -->
+                <div class="featured-project">
+                    <div class="project-image-container">
+                        <div class="project-image">
+                            <img src="images/to do list.webp" alt="To Do List">
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-label">Featured Project</div>
+                        <h3 class="project-title">To-Do-List Application</h3>
+                        <div class="project-description">
+                            <ul>
+                                <li>The To-Do List App functional web application helps users organize and manage their daily tasks with ease.</li>
+                                <li>Users can add new tasks dynamically, mark them as complete, and delete individual tasks, making task management simple and intuitive.</li>
+                            </ul>
+                        </div>
+                        <div class="tech-stack">
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Visual Studio Code</span>
+                        </div>
+                        <a href="https://listoftododos.netlify.app" class="project-link" target="_blank">
+                            View Project
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="m9 18 6-6-6-6"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+            <!-- Services Section -->
+            <div class="services-section">
+                <div class="services-header">
+                    <h2>Have any projects in mind?</h2>
+                    <div class="services-subtitle">SERVICES</div>
+                </div>
+
+                <div class="services-grid">
+                    <!-- Web Development -->
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="16,18 22,12 16,6"></polyline>
+                                <polyline points="8,6 2,12 8,18"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Web Development</h3>
+                        <p class="service-description">Professional websites tailored to your needs, built for performance, responsiveness, and a great user experience. For clients who need deeper insights, we also offer user research to guide strategy and design.</p>
+                        <a href="hireme.html" class="service-link">
+                            Get Started
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="m9 18 6-6-6-6"/>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Social Media & Writing -->
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9,22 9,12 15,12 15,22"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">Social Media & Writing</h3>
+                        <p class="service-description">Creative social media strategy paired with engaging content writing to connect with your audience, grow your brand, and drive results.</p>
+                        <a href="https://www.instagram.com/socialmoodlabel/" class="service-link">
+                            Get Started
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="m9 18 6-6-6-6"/>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- NGO Solutions -->
+                    <div class="service-item">
+                        <div class="service-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">NGO Solutions</h3>
+                        <p class="service-description">Tailored support for NGOs, including training manual design, constitutions, annual reports, newsletters, and more; plus workplace wellness resources that empower teams and strengthen organizations.</p>
+                        <a href="assets/compiledbydrpumlanofemeleNewsletter.pdf" class="service-link">
+                            Get Started
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="m9 18 6-6-6-6"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const hamburger = document.getElementById('hamburger');
+            
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navLinks = document.getElementById('navLinks');
+            const hamburger = document.getElementById('hamburger');
+            const navTabs = document.querySelector('.nav-tabs');
+            
+            if (!navTabs.contains(event.target)) {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            }
+        });
+
+        // Add animations on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const featuredProjects = document.querySelectorAll('.featured-project');
+            const serviceItems = document.querySelectorAll('.service-item');
+
+            // Intersection Observer for animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            // Observe featured projects and service items
+            [...featuredProjects, ...serviceItems].forEach((item) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(30px)';
+                item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(item);
+            });
+        });
+    </script>
+</body>
+</html>
