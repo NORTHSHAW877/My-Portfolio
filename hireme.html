@@ -475,6 +475,19 @@
             transform: translateY(0);
         }
 
+        /* Success / error messages */
+        .form-status {
+            margin-top: 15px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #00ff66; /* bright green for dark theme */
+        }
+
+        /* Light mode fix */
+        [data-theme="light"] .form-status {
+            color: #007a33; /* darker green for visibility */
+        }
+
         /* Connect Section */
         .connect-section h2 {
             font-family: 'Changa One', sans-serif;
@@ -852,7 +865,8 @@
                         </div>
                         <p class="form-subtitle">Drop me a message below and I'll get back to you soon.</p>
                         
-                        <form id="contactForm">
+                        <form id="contactForm" action="https://formspree.io/f/xgvlwkkv" method="POST">
+
                             <div class="form-row">
                                 <div class="form-group">
                                     <input type="text" name="name" placeholder="Your name" required>
@@ -905,12 +919,12 @@
 
                         <div class="direct-contact">
                             <h3>Or reach me directly at:</h3>
-                            <a href="mailto:your.email@gmail.com" class="email-link">
+                            <a href="pumlawebofwork@gmail.com" class="email-link">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="m4 4 7.07 7.07a2 2 0 0 0 2.83 0L21 4"/>
                                     <path d="m21 4-8.5 8.5a2 2 0 0 1-2.83 0L1 4l0 16c0 1.1.9 2 2 2h18c0-1.1-.9-2-2-2V4"/>
                                 </svg>
-                                your.email@gmail.com
+                                pumlawebofwork@gmail.com
                             </a>
                         </div>
                     </div>
@@ -962,34 +976,36 @@
         });
 
         // Form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
             e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const message = formData.get('message');
-            
-            // Here you would normally send the data to your server
-            alert('Thank you for your message! I\'ll get back to you soon.');
-            
-            // Reset form
-            this.reset();
-        });
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+            const form = this;
+            const formData = new FormData(form);
+            const status = document.createElement("p");
+            status.classList.add("form-status");
+
+            try {
+                let response = await fetch(form.action, {
+                    method: form.method,
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    status.textContent = "✅ Thank you for your message! I'll get back to you soon.";
+                    form.reset();
+                } else {
+                status.textContent = "⚠️ Oops! There was a problem submitting your form.";
                 }
-            });
+            } catch (error) {
+                status.textContent = "❌ Network error. Please try again.";
+            }
+
+        // remove old status if exists
+           const oldStatus = form.querySelector(".form-status");
+           if (oldStatus) oldStatus.remove();
+
+           form.appendChild(status);
         });
 
         // Add scroll animation for sections
