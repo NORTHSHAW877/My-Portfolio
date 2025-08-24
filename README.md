@@ -1,5 +1,7 @@
 🌟 My Portfolio
 
+<img width="102" height="20" alt="image" src="https://github.com/user-attachments/assets/d31621e7-d522-4f01-b4c2-6c07a6771278" />
+
 Welcome to my personal web development portfolio!
 This project showcases my skills, projects, and creativity in an engaging and user-friendly way.
 
