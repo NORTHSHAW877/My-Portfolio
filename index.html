@@ -402,6 +402,27 @@
             .theme-toggle svg {
                 fill: #000 !important;
             }
+ 
+        /* ... other mobile styles ... */
+            .nav-links a {
+                color: #000;
+        /* The link text color for the mobile menu */
+            }
+    
+        /* Make sure text within your main content is visible too */
+            .hero-section h1,
+            .hero-section h2,
+            .hero-section p {
+                color: #000;
+                text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+            }
+
+        /* ... existing mobile styles ... */
+            .nav-links.active {
+                background: rgba(255, 255, 255, 0.9);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        /* Use a more subtle, less dark shadow for the menu */
+            }
 
             /* Mobile logo adjustments */
             .logo {
