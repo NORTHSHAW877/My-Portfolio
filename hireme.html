@@ -777,12 +777,13 @@
                 color: black;
                 text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.9);
             }
-            
+    
             .main-container {
-                padding-left: 60px;
+                padding-left: 10px;  /* Reduced from 60px */
+                padding-right: 10px; /* Added right padding */
                 padding-top: 100px;
             }
-            
+    
             .social-icons {
                 left: 5px;
             }
@@ -798,9 +799,80 @@
             }
 
             .contact-form-section {
-                padding: 30px 20px;
+                padding: 20px 15px; /* Reduced padding */
+                margin: 0 5px;      /* Added margin for breathing room */
+            }
+
+            .connect-section {
+                margin: 0 5px;      /* Added margin for connect section too */
+            }
+
+            /* Fix email link wrapping */
+            .email-link {
+                word-break: break-all; /* Allow email to break if too long */
+                font-size: 0.9rem;     /* Slightly smaller font */
+            }
+
+            /* Ensure form inputs don't overflow */
+            .form-group input,
+            .form-group textarea {
+                padding: 12px 10px; /* Reduced padding */
+                font-size: 0.9rem;  /* Slightly smaller font */
+            }
+
+            /* Make social links wrap better */
+            .social-links {
+                gap: 10px; /* Reduced gap */
+            }
+
+            .social-link {
+                font-size: 0.85rem; /* Smaller font */
+                padding: 10px 15px; /* Reduced padding */
             }
         }
+
+        /* Extra small mobile screens - 320px */
+       @media (max-width: 320px) {
+            .main-container {
+                padding-left: 5px;   /* Even less padding */
+                padding-right: 5px;
+            }
+
+            .contact-form-section,
+            .connect-section {
+                margin: 0 2px;       /* Minimal margin */
+                padding: 15px 10px;  /* Minimal padding */
+            }
+
+            .contact-header h1 {
+                font-size: 1.8rem;   /* Smaller heading */
+            }
+
+            .form-header h2,
+            .connect-section h2 {
+                font-size: 1.5rem;   /* Smaller subheadings */
+            }
+
+            .email-link {
+                font-size: 0.8rem;   /* Even smaller email text */
+            }
+
+            .social-link {
+                font-size: 0.8rem;
+                padding: 8px 12px;
+            }
+
+            /* Stack social links vertically on very small screens */
+            .social-links {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .social-link {
+                width: 100%;
+                justify-content: flex-start;
+            }
+        }  
     </style>
 </head>
 <body>
