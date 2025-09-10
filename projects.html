@@ -209,7 +209,7 @@
         }
 
         .nav-links a {
-            color: black;
+            color: var(--text-color); /* Use theme color variable */
             text-decoration: none;
             font-family: 'Fredoka One', sans-serif;
             font-size: 1.1rem;
@@ -255,6 +255,28 @@
             width: 100%;
         }
 
+        /* Mobile menu specific link styling */
+        @media (max-width: 768px) {
+        .nav-links a {
+            color: white; /* White text for dark mobile menu */
+            background: transparent;
+        }
+        
+        [data-theme="light"] .nav-links a {
+            color: #333; /* Dark text for light mobile menu */
+        }
+        
+        .nav-links a:hover {
+                color: #abfc14;
+                background: rgba(171, 252, 20, 0.1);
+                transform: translateX(5px); /* Side slide instead of up */
+            }
+        }
+
+        body.menu-open {
+            overflow: hidden;
+        }
+        
         .hamburger {
             display: none;
             flex-direction: column;
@@ -267,6 +289,7 @@
             height: 3px;
             background: var(--text-color);
             transition: 0.3s;
+            border-radius: 2px;
         }
 
         /* Main Content */
@@ -695,17 +718,26 @@
                 height: 40px;
             }
             
-            .nav-links {
+           .nav-links {
                 display: none;
                 position: absolute;
                 top: 100%;
                 right: 0;
-                background: var(--nav-bg);
+                background: rgba(0, 0, 0, 0.95); /* Solid dark background for dark mode */
                 flex-direction: column;
                 padding: 20px;
                 width: 200px;
                 border-radius: 0 0 0 10px;
-                border: 1px solid var(--border-color);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                backdrop-filter: blur(10px);
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+                z-index: 9999; /* To ensure it's on top */
+            }
+
+            [data-theme="light"] .nav-links {
+                background: rgba(255, 255, 255, 0.95); /* Solid white background for light mode */
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
             }
 
             .nav-links.active {
