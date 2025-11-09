@@ -687,10 +687,12 @@
                 border: 2px solid #abfc14;
                 box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
                 z-index: 1001;
+                pointer-events: none;
             }
 
             .nav-links.active {
                 display: flex;
+                pointer-events: auto;
             }
 
             .nav-links.active a {
@@ -986,7 +988,7 @@
 
     <!-- Footer -->
       <footer>
-        <div class="footer-message">From me to you✨</div>
+        <div class="footer-message">Love It✨</div>
         &copy; Pumla P N. 2025 All rights reserved.
     </footer>
     
@@ -1075,7 +1077,7 @@
                 });
             }, observerOptions);
 
-            // Add animation to sections
+        // Add animation to sections
             const sections = document.querySelectorAll('.contact-content');
             sections.forEach(section => {
                 section.style.opacity = '0';
@@ -1084,6 +1086,33 @@
                 observer.observe(section);
             });
         });
+
+        // Close menu when clicking on a nav link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                const navLinks = document.getElementById('navLinks');
+                const hamburger = document.getElementById('hamburger');
+
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+
+        // Close menu when scrolling
+        let scrollTimeout;
+        window.addEventListener('scroll', function() {
+            const navLinks = document.getElementById('navLinks');
+            const hamburger = document.getElementById('hamburger');
+                
+            if (navLinks.classList.contains('active')) {
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(function() {
+                    navLinks.classList.remove('active');
+                    hamburger.classList.remove('active');
+                }, 100);
+            }
+        });
+
     </script>
 </body>
 </html>

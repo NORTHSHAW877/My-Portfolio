@@ -644,6 +644,7 @@
                 border: 2px solid #abfc14;
                 box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
                 z-index: 1001;
+                 pointer-events: none;
             }
 
             .nav-links.active a {
@@ -661,6 +662,7 @@
 
             .nav-links.active {
                 display: flex;
+                pointer-events: auto; 
             }
 
             .hamburger {
@@ -846,7 +848,7 @@
             <div class="container">
                 <h1>ABOUT ME</h1>
                 <div class="underline"></div>
-                <p class="about-intro">This is the space where I introduce myself, share what I do, and highlight the tech skills and knowledge that drive my work.</p>
+                <p class="about-intro">HI! 👋</p>
             </div>
         </section>
 
@@ -864,12 +866,12 @@
             <div class="container">
                 <div class="content-grid">
                     <div class="about-text">
-                        <h2>In a few words</h2>
-                        <p>I'm a <strong>Front-end Web Developer</strong> with a unique background in Social Work (PhD) and a Bcom Industrial & Organizational Psychology.</p>
-                        <p>My experience in NGOs, higher education institutions, child and youth care, and ECD's taught me to listen deeply, value individuality, and design with empathy.</p>
-                        <p>I now channel that same passion into creating thoughtful, user-focused web solutions. Explore my <strong>projects</strong> to see how I bring design and purpose together.</p>
-                        <p>I'm open to <strong>Job</strong> opportunities where I can learn, contribute, and make an impact.</p>
-                        <p>Interested in working with me, <strong>discover the skills and services I bring to the table.</strong></p> 
+                        <p>I'm <strong>Pumla</strong> & I love designing websites.</p>
+                        <p>I specialise in front-end development, and although I work with personal brands, I’m especially drawn to designing for NGOs, start-ups, and community projects.</p>
+                        <p>It comes from my experience with social change initiatives plus my roots as a <strong>Social Worker (PhD) and a BCom Industrial & Organizational Psychology graduate. I get how things work, from the people to the programmes to the purpose. No pressure 😊.</strong></p>
+                        <p>I am a great listener, diligent & I design websites that actually feel good to use; it's where functionality meets empathy.</p>
+                        <p>I am excited about<strong> opportunities </strong> where I can grow, contribute fresh ideas & turn concepts into bold realities.</p>
+                        <p>Interested in working with me? <strong> discover the skills and services I bring to the table.</strong></p> 
                     </div>
 
                     <div class="skills-section">
@@ -918,7 +920,7 @@
 
     <!-- Footer -->
     <footer>
-        <div class="footer-message">From me to you✨</div>
+        <div class="footer-message">Love It✨</div>
         &copy; Pumla P N. 2025 All rights reserved.
     </footer>
 
@@ -997,6 +999,33 @@
                 observer.observe(section);
             });
         });
+
+        // Close menu when clicking on a nav link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                const navLinks = document.getElementById('navLinks');
+                const hamburger = document.getElementById('hamburger');
+
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+
+        // Close menu when scrolling
+        let scrollTimeout;
+        window.addEventListener('scroll', function() {
+            const navLinks = document.getElementById('navLinks');
+            const hamburger = document.getElementById('hamburger');
+            
+            if (navLinks.classList.contains('active')) {
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(function() {
+                    navLinks.classList.remove('active');
+                    hamburger.classList.remove('active');
+                }, 100);
+            }
+        });
+
     </script>
 </body>
 </html>
