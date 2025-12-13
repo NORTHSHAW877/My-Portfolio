@@ -1,4 +1,6 @@
-A bold, modern portfolio website featuring a vibrant red color scheme with neon accent effects. Built with pure HTML, CSS, and vanilla JavaScript for optimal performance and easy customization.
+🌐 My Portfolio
+
+A bold, modern portfolio website featuring a vibrant red color scheme with neon accent effects. Built with pure HTML, CSS, and vanilla JavaScript for optimal performance and easy customization.Fully responsive layout across multiple devices.
 🎨 Features
 
 Responsive Design - Fully mobile-friendly layout that adapts to all screen sizes
