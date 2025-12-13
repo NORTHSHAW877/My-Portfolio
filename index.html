@@ -775,6 +775,7 @@
             background: linear-gradient(135deg, #fe4f6c 0%, #fe8700 100%);
             min-height: 50vh;
             position: relative;
+            padding: 80px 20px;
         }
 
         #contact::before {
@@ -794,6 +795,9 @@
         #contact .section-content {
             position: relative;
             z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
         .contact-info {
@@ -808,19 +812,139 @@
             font-weight: 300;
         }
 
+        .contact-info p {
+            margin-bottom: 15px;
+        }
+
         .contact-info a {
             color: white;
             text-decoration: none;
             font-weight: 600;
             border-bottom: 2px solid rgba(255, 255, 255, 0.4);
             transition: border-color 0.3s ease;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            word-break: break-word;
+            overflow-wrap: break-word;
+            max-width: 100%;
+        }
+
+        .contact-info a i {
+            flex-shrink: 0; /* Prevent icon from shrinking */
         }
 
         .contact-info a:hover {
             border-color: white;
         }
 
+        /* Tablet */
+        @media (max-width: 1024px) {
+            #contact {
+                padding: 70px 20px;
+            }
+            
+            .contact-info {
+                font-size: 24px;
+            }
+            
+            .contact-info p:first-child {
+                font-size: 17px;
+            }
+        }
+
+        /* Mobile Landscape and Below */
+        @media (max-width: 768px) {
+            #contact {
+                padding: 60px 20px;
+                min-height: auto;
+            }
+            
+            #contact .section-content {
+                padding: 0 15px;
+            }
+            
+            .contact-info {
+                font-size: 20px;
+                line-height: 1.8;
+            }
+            
+            .contact-info p:first-child {
+                font-size: 16px;
+                margin-bottom: 15px;
+            }
+            
+            .contact-info a {
+                font-size: 18px;
+            }
+        }
+
+        /* Small Mobile */
+        @media (max-width: 480px) {
+            #contact {
+                padding: 50px 12px;
+            }
+            
+            #contact .section-content {
+                padding: 0 10px;
+            }
+            
+            .contact-info {
+                font-size: 16px;
+                line-height: 1.6;
+            }
+            
+            .contact-info p:first-child {
+                font-size: 14px;
+                margin-bottom: 12px;
+            }
+            
+            .contact-info a {
+                font-size: 15px;
+                word-break: break-all;
+                flex-wrap: wrap; /* Allow wrapping */
+            }
+        }
+
+        /* Galaxy S8+ and similar (360-414px) */
+        @media (max-width: 414px) {
+            .contact-info a {
+                font-size: 14px;
+            }
+        }
+
+        /* Extra Small Devices (Galaxy Fold, S-320) */
+        @media (max-width: 320px) {
+            #contact {
+                padding: 40px 8px;
+            }
+            
+            #contact .section-content {
+                padding: 0 8px;
+            }
+            
+            .contact-info {
+                font-size: 14px;
+                line-height: 1.5;
+            }
+            
+            .contact-info p:first-child {
+                font-size: 12px;
+                margin-bottom: 10px;
+            }
+            
+            .contact-info a {
+                font-size: 11px; /* Very small for 320px */
+                word-break: break-all;
+                line-height: 1.4;
+                gap: 5px; /* Smaller gap */
+            }
+            
+            .contact-info a i {
+                font-size: 12px; /* Smaller icon */
+            }
+        }
+        
         /* Footer */
         footer {
             text-align: center;
