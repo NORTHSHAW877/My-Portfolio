@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Changa+One&family=Fredoka+One&display=swap" rel="stylesheet">
-    <title>Designer & Front end Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Dr. Pumla Nofemele - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -12,734 +13,1470 @@
             box-sizing: border-box;
         }
 
-        /* Custom cursor - changed to black */
-        * {
-            cursor: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTQiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJ0cmFuc3BhcmVudCIvPgo8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIyIiBmaWxsPSIjMDAwMDAwIi8+CjxsaW5lIHgxPSIxNiIgeTE9IjQiIHgyPSIxNiIgeTI9IjEwIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iMiIvPgo8bGluZSB4MT0iMTYiIHkxPSIyMiIgeDI9IjE2IiB5Mj0iMjgiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxsaW5lIHgxPSI0IiB5MT0iMTYiIHgyPSIxMCIgeTI9IjE2IiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iMiIvPgo8bGluZSB4MT0iMjIiIHkxPSIxNiIgeDI9IjI4IiB5Mj0iMTYiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLXdpZHRoPSIyIi8+Cjwvc3ZnPgo=') 16 16, crosshair;
-        }
-
-        a, button {
-            cursor: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTQiIHN0cm9rZT0iIzAwMDAwMCIgc3Ryb2tlLXdpZHRoPSIzIiBmaWxsPSJyZ2JhKDAsIDAsIDAsIDAuMikiLz4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMyIgZmlsbD0iIzAwMDAwMCIvPgo8L3N2Zz4K') 16 16, pointer;
-        }
-
-        [title]:hover {
-            cursor: default !important;
-        }
-        
-        :root {
-            --bg-color: #000;
-            --text-color: #fff;
-            --text-shadow: #fff;
-            --nav-bg: rgba(0, 0, 0, 0.9);
-            --footer-bg: rgba(0, 0, 0, 0.9);
-            --border-color: rgba(255, 255, 255, 0.1);
-            --icon-color: #fff;
-            --hero-bg: url('images/back7.webp');
-            --hover-color: #abfc14;
-            --shadow-light: rgba(0, 0, 0, 0.3);
-            --shadow-dark: rgba(255, 255, 255, 0.3);
-        }
-
-        /* Override for devices that prefer a light color scheme */
-        @media (prefers-color-scheme: light) {
-            :root {
-                --bg-color: #f5f5f5;
-                --text-color: #333;
-                --text-shadow: #333;
-                --nav-bg: rgba(255, 255, 255, 0.95);
-                --footer-bg: rgba(255, 255, 255, 0.95);
-                --border-color: rgba(0, 0, 0, 0.1);
-                --icon-color: #333;
-                --hero-bg: url('images/back7.webp');
-                --shadow-light: rgba(0, 0, 0, 0.3);
-                --shadow-dark: rgba(255, 255, 255, 0.3);
-            }
-        }
-
-        /* My existing data-theme light mode toggle */
-        [data-theme="light"] {
-            --bg-color: #f5f5f5;
-            --text-color: #333;
-            --text-shadow: #333;
-            --nav-bg: rgba(255, 255, 255, 0.95);
-            --footer-bg: rgba(255, 255, 255, 0.95);
-            --border-color: rgba(0, 0, 0, 0.1);
-            --icon-color: #333;
-            --hero-bg: linear-gradient(135deg, #abfc14 50%, grey 100%);
-            --shadow-light: rgba(0, 0, 0, 0.3);
-            --shadow-dark: rgba(255, 255, 255, 0.3);
-        }
-
         body {
-            font-family: 'Arial', sans-serif;
-            background: var(--hero-bg);
-            background-size: cover;
-            background-attachment: fixed;
-            color: var(--text-color);
-            min-height: 100vh;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ea8066 0%, #a24b4b 100%);
+            color: white;
             overflow-x: hidden;
-            transition: all 0.3s ease;
-        }
-
-        /* Social Icons */
-        .social-icons {
-            position: fixed;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            z-index: 1000;
-        }
-
-        .social-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(0, 0, 0, 0.8);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-        }
-
-        [data-theme="light"] .social-icon {
-            background: rgba(255, 255, 255, 0.9);
-            border-color: rgba(0, 0, 0, 0.1);
-        }
-
-        [data-theme="light"] .nav-links {
-            background: rgba(255, 255, 255, 0.98);
-            border-color: purple;
-        }
-
-        [data-theme="light"] .nav-links.active a {
-            color: #333 !important;
-            border-color: rgba(128, 0, 128, 0.3);
-        }
-
-        [data-theme="light"] .nav-links.active a:hover {
-            color: purple !important;
-            background: rgba(128, 0, 128, 0.1) !important;
-            border-color: purple;
-        }
-
-        .social-icon:hover {
-            transform: scale(1.1);
-            box-shadow: 0 5px 15px purple;
-        }
-
-        .social-icon svg {
-            width: 24px;
-            height: 24px;
-            fill: #fff;
-            transition: all 0.3s ease;
-        }
-
-        /* Light theme - make icons dark */
-        [data-theme="light"] .social-icon svg {
-            fill: #333;
-        }
-
-        .theme-toggle {
-            background: linear-gradient(45deg, #abfc14);
-        }
-
-        .theme-toggle:hover {
-            background: linear-gradient(45deg, white,#abfc14);
-        }
-
-        /* Theme toggle icon should always be visible */
-        .theme-toggle svg {
-            fill: #000 !important;
         }
 
         /* Navigation */
-        .nav-tabs {
+        nav {
             position: fixed;
             top: 0;
+            left: 0;
             width: 100%;
-            padding: 20px 40px;
-            background: var(--nav-bg);
-            z-index: 1000;
+            padding: 20px 50px;
+            background: rgba(209, 4, 4, 0.836);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid var(--border-color);
-            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
         }
 
-        /* Updated logo styles for circular photo */
-        .logo {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 2px solid var(--text-color);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            position: relative;
-        }
-
-        .logo:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 15px rgba(171, 252, 20, 0.5);
-        }
-
-        .logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
-
-        .nav-links {
+        .nav-left {
             display: flex;
-            gap: 30px;
+            gap: 5px;
+            align-items: center;
         }
 
-        .nav-links a {
-            color: black;
-            text-decoration: none;
-            font-family: 'Fredoka One', sans-serif;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            position: relative;
+        .nav-right {
             display: flex;
             align-items: center;
-            gap: 8px;
-            padding: 8px 12px;
-            border-radius: 20px;
         }
 
-        .nav-links a svg {
-            width: 18px;
-            height: 18px;
-            fill: currentColor;
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 0;
             transition: all 0.3s ease;
+            font-weight: 600;
+            font-family: 'Arial Black', 'Arial Bold', sans-serif;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
-        .nav-links a:hover {
-            color: #abfc14;
-            background: black;
-            transform: translateY(-2px);
+        nav a:hover {
+            background: transparent;
+            transform: none;
+            opacity: 0.6;
+        }
+        
+        .nav-left a:not(:last-child)::after {
+            content: ' //';
+            margin-left: 5px;
+            opacity: 0.4;
         }
 
-        .nav-links a:hover svg {
-            transform: scale(1.1);
-           
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -2px;
-            left: 50%;
-            background: linear-gradient(90deg, #abfc14, whitesmoke, purple);
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
+        /* Hamburger Menu */
         .hamburger {
             display: none;
             flex-direction: column;
             cursor: pointer;
-            gap: 4px;
+            z-index: 1001;
+            width: 30px;
+            height: 24px;
+            justify-content: space-between;
         }
 
         .hamburger span {
-            width: 25px;
+            width: 100%;
             height: 3px;
-            background: var(--text-color);
-            transition: 0.3s;
-            border-radius: 2px;
-            box-shadow: 0 0 2px rgba(171, 252, 20, 0.5);
+            background: white;
+            border-radius: 3px;
+            transition: all 0.3s ease;
         }
 
-        /* Main Content */
-        .main-container {
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 80%;
+            max-width: 400px;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(209, 4, 4, 0.98) 0%, rgba(162, 75, 75, 0.98) 100%);
+            backdrop-filter: blur(20px);
+            padding: 80px 40px 40px;
+            transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 999;
+            box-shadow: 5px 0 30px rgba(0, 0, 0, 0.3);
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            left: 0;
+        }
+
+        .mobile-menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .mobile-menu a:hover {
+            padding-left: 20px;
+            color: #ffcc00;
+        }
+
+        .mobile-menu a:last-child {
+            border-bottom: none;
+        }
+
+        /* Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 998;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        section {
             min-height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: flex-start;
-            padding-left: 100px;
-            padding-top: 150px;
+            justify-content: center;
+            padding: 120px 50px 80px;
+            position: relative;
         }
 
-        .hero-content {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
+        .section-content {
+            max-width: 1200px;
             width: 100%;
         }
 
-        .hero-section {
-            max-width: 800px;
-            text-align: left;
-            margin: 0;
+        .section-label {
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: 0.6;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-size: 72px;
+            font-weight: 700;
+            letter-spacing: -2px;
+            margin-bottom: 30px;
+            line-height: 1.1;
+        }
+
+        .section-description {
+            font-size: 18px;
+            line-height: 1.8;
+            max-width: 650px;
+            opacity: 0.9;
+            margin-bottom: 60px;
+            font-weight: 300;
+        }
+
+        .section-title,
+        .about-title,
+        h1 {
+            background: linear-gradient(90deg, #ffffff, #ffcc00, #ff6b6b, #ffffff);
+            background-size: 300% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 4s ease infinite;
+        }
+
+        h3 {
+            font-weight: 700;
+            background: linear-gradient(90deg, #ffffff, #ffcc00,#ff6b6b, #ffffff);
+            background-size: 300% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 4s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .work-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .work-item {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .work-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .work-item-image {
+            width: 100%;
+            height: 360px;
+            object-fit: contain;
+            display: block;
+            transition: transform 0.4s ease;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 10px;
         }
         
-        .hero-section h1 {
-            font-family: 'Changa One', sans-serif;
-            font-size: 4.5rem;
+        .work-item:hover .work-item-image {
+            transform: scale(1.05);
+        }
+
+        .work-item-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .work-item-title {
+            font-size: 24px;
             font-weight: 700;
-            margin: 0 0 10px 0;
-            letter-spacing: -1px;
-            line-height: 1;
-            color: black;
-            text-shadow: 2px 2px 4px var(--shadow-dark);
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+            line-height: 1.3;
+        }
+
+        .work-item-description {
+            font-size: 14px;
+            line-height: 1.7;
+            opacity: 0.85;
+            margin-bottom: 20px;
+            flex-grow: 1;
+            font-weight: 300;
+        }
+
+        .work-item-link {
+            color: white;
+            text-decoration: none;
+            font-size: 12px;
+            letter-spacing: 1px;
             text-transform: uppercase;
-            transition: all 0.3s ease;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: gap 0.3s ease;
+        }
+
+        .work-item-link:hover {
+            gap: 12px;
+        }
+
+        .work-item-link::after {
+            content: '→';
+            font-size: 16px;
+        }
+
+        /* Hero Section */
+        #home {
+            text-align: center;
+            background: linear-gradient(135deg, #af1d1d 0%, #e07847 50%, #e20c0c 100%);
             position: relative;
-            cursor: pointer;
+            min-height: 50vh;
         }
 
-        [data-theme="light"] .hero-section h1 {
-            color: #000;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+        #home::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.08) 35px, rgba(255,255,255,.08) 70px),
+                repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(0,0,0,.08) 35px, rgba(0,0,0,.08) 70px);
+            pointer-events: none;
+            z-index: 1;
         }
 
-        .hero-section h1:hover {
-            color: var(--hover-color);
-            text-shadow: 2px 2px 8px rgba(171, 252, 20, 0.4);
-            transform: translateY(-2px);
+        #home .section-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
-        [data-theme="light"] .hero-section h1:hover {
-            color: purple;
-            text-shadow: 2px 2px 8px rgba(128, 0, 128, 0.4);
+        .hero-title {
+            font-size: 120px;
+            font-weight: 800;
+            letter-spacing: -4px;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #ffffff, #ffcc00, #ff6b6b, #ffffff);
+            background-size: 300% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease-out, gradientShift 4s ease infinite;
         }
 
-        .hero-section h2 {
-            font-size: 1.8rem;
-            color: var(--text-color);
+        .hero-subtitle {
+            font-size: 48px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            opacity: 1;
+            font-weight: 900;
+            background: linear-gradient(90deg, #ffffff, #ffcc00, #ffffff);
+            background-size: 300% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 4s ease infinite;
+        }
+
+        /* About Section */
+        #about {
+            background: linear-gradient(135deg, #d91e1e 0%, #b83838 100%);
+            min-height: 70vh;
+            padding: 80px 20px; /* Added padding here */
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            max-width: 1400px; /* Added max-width */
+            margin: 0 auto; /* Center the container */
+            padding: 0 20px; /* Additional padding */
+        }
+
+        .about-image {
+            width: 100%;
+            height: 500px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 0, 98, 0.2), transparent);
+            z-index: 1;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Changed from cover to contain */
+            object-position: center;
+            display: block;
+        }
+
+        .about-text {
+            padding: 20px;
+        }
+
+        .about-title {
+            font-size: 64px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            line-height: 1.1;
+            word-wrap: break-word; /* Prevent text overflow */
+        }
+
+        .about-intro {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            font-family: 'Courier New', monospace;
+            word-wrap: break-word;
+        }
+
+        .about-description {
+            font-size: 18px;
+            line-height: 1.8;
             margin-bottom: 25px;
-            font-weight: 500;
-            line-height: 1.2;
-            transition: color 0.3s ease;
+            opacity: 0.95;
+            word-wrap: break-word;
         }
 
-        [data-theme="light"] .hero-section h2 {
-            color: #000;
+        .skills-container {
+            margin-top: 40px;
         }
 
-        .hero-section h2:hover {
-            color: var(--hover-color);
+        .skills-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            opacity: 0.9;
         }
 
-        [data-theme="light"] .hero-section h2:hover {
-            color: purple;
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
         }
 
-        .hero-section p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: var(--text-color);
-            margin-bottom: 40px;
-            max-width: 500px;
-            font-weight: 400;
-            transition: color 0.3s ease;
+        .skill-block {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 12px;
+            padding: 15px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: default;
+            word-wrap: break-word;
         }
 
-        [data-theme="light"] .hero-section p {
-            color: #000;
+        .skill-block:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
 
-        .hero-section p:hover {
-            color: var(--hover-color);
+        /* Tablet and Below - Stack Layout */
+        @media (max-width: 1024px) {
+            #about {
+                padding: 60px 20px;
+            }
+            
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 0 30px;
+            }
+            
+            .about-image {
+                height: 450px;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+            
+            .about-text {
+                padding: 0;
+            }
+            
+            .about-title {
+                font-size: 48px;
+            }
+            
+            .about-intro {
+                font-size: 24px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            }
         }
 
-        [data-theme="light"] .hero-section p:hover {
-            color: purple;
+        /* Mobile Landscape and Below */
+        @media (max-width: 768px) {
+            #about {
+                padding: 50px 15px;
+            }
+            
+            .about-container {
+                gap: 35px;
+                padding: 0 15px;
+            }
+            
+            .about-image {
+                height: 400px;
+                max-width: 100%;
+            }
+            
+            .about-title {
+                font-size: 36px;
+                letter-spacing: 2px;
+                margin-bottom: 20px;
+            }
+            
+            .about-intro {
+                font-size: 22px;
+                margin-bottom: 20px;
+            }
+            
+            .about-description {
+                font-size: 16px;
+                line-height: 1.6;
+                margin-bottom: 20px;
+            }
+            
+            .skills-container {
+                margin-top: 30px;
+            }
+            
+            .skills-title {
+                font-size: 20px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 12px;
+            }
+            
+            .skill-block {
+                padding: 12px 10px;
+                font-size: 13px;
+            }
+        }
+
+        /* Small Mobile */
+        @media (max-width: 480px) {
+            #about {
+                padding: 40px 15px;
+            }
+            
+            .about-container {
+                gap: 30px;
+                padding: 0 10px;
+            }
+            
+            .about-image {
+                height: 350px;
+                border-radius: 15px;
+            }
+            
+            .about-title {
+                font-size: 32px;
+                letter-spacing: 1px;
+            }
+            
+            .about-intro {
+                font-size: 20px;
+            }
+            
+            .about-description {
+                font-size: 15px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+            
+            .skill-block {
+                padding: 10px 8px;
+                font-size: 12px;
+                border-radius: 10px;
+            }
+        }
+
+        /* Extra Small Devices (320px - Galaxy Fold, etc.) */
+        @media (max-width: 320px) {
+            #about {
+                padding: 30px 10px;
+            }
+            
+            .about-container {
+                padding: 0 5px;
+            }
+            
+            .about-image {
+                height: 280px;
+            }
+            
+            .about-title {
+                font-size: 26px;
+            }
+            
+            .about-intro {
+                font-size: 18px;
+            }
+            
+            .about-description {
+                font-size: 14px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Writing Section */
+        #writing {
+            background: linear-gradient(135deg, #fc1414 0%, #ad2e2e 100%);
+        }
+
+        #writing .work-item-image {
+            height: auto;
+            min-height: 250px;
+            max-height: 400px;
+            object-fit: contain;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        #writing .work-gallery {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        #writing .work-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #writing .work-item-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 1.5rem;
+        }
+
+        #writing .work-item:nth-child(7) .work-item-image {
+            object-position: top;
+        }
+
+        #writing .work-item a {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.3s ease;
+        }
+
+        #writing .work-item a:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Web Design Section */
+        #webdesign .work-gallery {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin-left: auto;
+        }
+
+        #webdesign .work-item:nth-child(1),
+        #webdesign .work-item:nth-child(2),
+        #webdesign .work-item:nth-child(3) {
+            grid-column: span 2;
+        }
+
+        #webdesign .work-item:nth-child(4),
+        #webdesign .work-item:nth-child(5) {
+            grid-column: span 3;
+        }
+
+        #webdesign .work-item:nth-child(6),
+        #webdesign .work-item:nth-child(7),
+        #webdesign .work-item:nth-child(8) {
+            grid-column: span 6;
+        }
+
+        /* ALL images use contain to prevent cropping */
+        #webdesign .work-item-image {
+            height: 400px;
+            object-fit: contain;
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        #webdesign .work-item:nth-child(4) .work-item-image,
+        #webdesign .work-item:nth-child(5) .work-item-image {
+            height: 350px;
+        }
+
+        #webdesign .work-item:nth-child(6) .work-item-image,
+        #webdesign .work-item:nth-child(7) .work-item-image {
+            height: 500px;
+        }
+
+        #webdesign .work-item:nth-child(8) .work-item-image {
+            height: 550px;
+        }
+
+        /* Instructional Design Section */
+        #instructional {
+            background: linear-gradient(135deg, #f72828 0%, #690c0c 100%);
+        }
+
+        #instructional .work-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 1150px;
+        }
+
+        #instructional .work-item-image {
+            height: 500px;
+        }
+
+        #instructional .work-item:nth-child(1),
+        #instructional .work-item:nth-child(2) {
+            grid-column: span 2;
+        }
+
+        #instructional .work-item:nth-child(3),
+        #instructional .work-item:nth-child(4) {
+            grid-column: span 1;
+        }
+
+        #instructional .work-item:nth-child(5) {
+            grid-column: span 2;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: linear-gradient(135deg, #fe4f6c 0%, #fe8700 100%);
+            min-height: 50vh;
+            position: relative;
+        }
+
+        #contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.08) 35px, rgba(255,255,255,.08) 70px),
+                repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(0,0,0,.08) 35px, rgba(0,0,0,.08) 70px);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        #contact .section-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-info {
+            font-size: 28px;
+            line-height: 2;
+        }
+
+        .contact-info p:first-child {
+            font-size: 18px;
+            opacity: 0.8;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+            transition: border-color 0.3s ease;
+            display: inline-block;
+        }
+
+        .contact-info a:hover {
+            border-color: white;
         }
 
         /* Footer */
-         footer {
+        footer {
             text-align: center;
-            padding: 40px 20px;
-            background: var(--footer-bg);
-            border-top: 1px solid var(--border-color);
-            color: var(--text-color);
+            padding: 50px 20px;
+            background: rgb(134, 0, 0);
+            backdrop-filter: blur(10px);
+            color: #fff;
             font-size: 0.9rem;
-            line-height: 1.6;
+            line-height: 1.8;
         }
 
         .footer-message {
             margin-bottom: 10px;
             font-style: italic;
-            color: var(--text-color);
             opacity: 0.8;
+            font-weight: 300;
         }
 
-        /* Tablet Responsive */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Tablet Responsive (768px - 1024px) */
         @media (max-width: 1024px) {
-            .hero-section h1 {
-                font-size: 4.2rem;
+            .section-title {
+                font-size: 56px;
             }
-            
-            .main-container {
-                padding-left: 120px;
-                padding-top: 130px;
+
+            .hero-title {
+                font-size: 80px;
+            }
+
+            .hero-subtitle {
+                font-size: 36px;
+            }
+
+            .about-container {
+                grid-template-columns: 400px 1fr;
+                gap: 40px;
+            }
+
+            .about-title {
+                font-size: 48px;
+            }
+
+            .about-intro {
+                font-size: 28px;
+            }
+
+            /* Web Design Grid for Tablet */
+            #webdesign .work-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            #webdesign .work-item {
+                grid-column: span 1 !important;
+            }
+
+            #webdesign .work-item-image {
+                height: auto !important;
+                min-height: 300px;
+                max-height: 500px;
+                object-fit: contain !important;
             }
         }
 
-        @media (max-width: 900px) {
-            .hero-section h1 {
-                font-size: 3.8rem;
-            }
-            
-            .main-container {
-                padding-left: 100px;
-                padding-top: 120px;
-            }
-        } 
-
-        /* Mobile Responsive */
+        /* Mobile Responsive (max-width: 768px) */
         @media (max-width: 768px) {
-            .social-icons {
-                left: 10px;
-                gap: 10px;
-            }
-            
-            .social-icon {
-                width: 40px;
-                height: 40px;
-                border: 1px solid rgba(255, 255, 255, 0.3); 
-            }
-            
-            .social-icon svg {
-                width: 20px;
-                height: 20px;
-                fill: #fff;
-            }
-
-            [data-theme="light"] .social-icon svg {
-                fill: #333;
-            }
-        
-            .theme-toggle svg {
-                fill: #000 !important;
-            }
-
-            /* Mobile logo adjustments */
-            .logo {
-                width: 40px;
-                height: 40px;
-            }
-
-            .logo::after {
-                font-size: 0.8rem;
-            }
-            
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                right: 0;
-                background: rgba(0, 0, 0, 0.95);
-                flex-direction: column;
-                padding: 20px;
-                width: 200px;
-                border-radius: 0 0 0 10px;
-                border: 2px solid #abfc14;
-                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-                z-index: 1001;
-                pointer-events: none;
-            }
-
-            .nav-links.active a {
-                color: white !important;
-                background: transparent !important;
-                border: 1px solid rgba(171, 252, 20, 0.3);
-                margin-bottom: 10px;
-            }
-
-            .nav-links.active a:hover {
-                color: #abfc14 !important;
-                background: rgba(171, 252, 20, 0.1) !important;
-                border-color: #abfc14;
-            }
-
-            .nav-links.active {
-                display: flex;
-                pointer-events: auto;
-            }
-
+            /* Show hamburger menu */
             .hamburger {
                 display: flex;
             }
 
-            .hamburger.active span:nth-child(1) {
-                transform: rotate(-45deg) translate(-5px, 6px);
+            /* Hide desktop navigation */
+            .nav-left,
+            .nav-right {
+                display: none;
             }
 
-            .hamburger.active span:nth-child(2) {
-                opacity: 0;
-            }
-
-            .hamburger.active span:nth-child(3) {
-                transform: rotate(45deg) translate(-5px, -6px);
-            }
-
-            .main-container {
-                min-height: 100vh;
-                display: flex;
-                align-items: center;
-                justify-content: flex-start;
-                padding: 20px 20px 20px 70px;
-                padding-top: 100px;
-            }
-
-            .hero-section h1 {
-                font-size: 2.8rem;
-                letter-spacing: -1px;
-                color: black;
-                text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.8);
-            }
-
-            .hero-section h1:hover {
-                color: var(--hover-color);
-                text-shadow: 2px 2px 8px rgba(171, 252, 20, 0.6);
-            }
-
-            .hero-section h2 {
-                font-size: 1.4rem;
-                color: var(--text-color);
-                text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
-            }
-
-            .hero-section p {
-                font-size: 1rem;
-                color: var(--text-color);
-                text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
-            }
-
-            .hero-content {
-                display: flex;
-                align-items: center;
-                justify-content: flex-start;
-                width: 100%;
-                min-height: calc(100vh - 100px);
-            }
-
-            .nav-tabs {
+            nav {
                 padding: 15px 20px;
             }
 
-            footer {
-                position: static;
-                text-align: center;
+            section {
+                padding: 100px 20px 60px;
+                min-height: auto;
+            }
+
+            .section-title {
+                font-size: 36px;
+                letter-spacing: -1px;
+            }
+
+            .section-description {
+                font-size: 16px;
+            }
+
+            .hero-title {
+                font-size: 48px;
+                letter-spacing: -2px;
+            }
+
+            .hero-subtitle {
+                font-size: 24px;
+                letter-spacing: 2px;
+            }
+
+            /* Writing Section - Mobile */
+            #writing .work-gallery {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            #writing .work-item-image {
+                height: auto;
+                min-height: 200px;
+                max-height: 300px;
+                object-fit: contain;
+            }
+
+            /* Web Design Section - Mobile */
+            #webdesign .work-gallery {
+                grid-template-columns: 1fr !important;
+                gap: 20px;
+            }
+
+            #webdesign .work-item {
+                grid-column: span 1 !important;
+            }
+
+            #webdesign .work-item-image {
+                height: auto !important;
+                min-height: 250px;
+                max-height: 400px;
+                object-fit: contain !important;
+                background-color: rgba(255, 255, 255, 0.05);
+            }
+
+            /* Instructional Design - Mobile */
+            #instructional .work-gallery {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            #instructional .work-item {
+                grid-column: span 1 !important;
+            }
+
+            #instructional .work-item-image {
+                height: auto;
+                min-height: 250px;
+                max-height: 400px;
+                object-fit: contain;
+            }
+
+            .work-item-content {
                 padding: 20px;
-                margin-top: 40px;
+            }
+
+            .work-item-title {
+                font-size: 20px;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .about-image {
+                height: 350px;
+            }
+            
+            .about-title {
+                font-size: 32px;
+            }
+            
+            .about-intro {
+                font-size: 20px;
+            }
+
+            .about-description {
+                font-size: 16px;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+                gap: 10px;
+            }
+
+            .skill-block {
+                font-size: 12px;
+                padding: 12px 15px;
+            }
+
+            .contact-info {
+                font-size: 20px;
+            }
+
+            .contact-info p:first-child {
+                font-size: 16px;
             }
         }
 
-        /* Small mobile screens */
+        /* Small Mobile (max-width: 480px) */
         @media (max-width: 480px) {
-            .hero-section h1 {
-                font-size: 2.2rem;
-                color: black;
-                text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.9);
-            }
-            
-            .main-container {
-                padding-left: 60px;
-                align-items: center;
-                padding-top: 100px;
+            .hero-title {
+                font-size: 36px;
             }
 
-            .hero-content {
-                min-height: calc(100vh - 100px);
-                align-items: center;
-            }
-            
-            .social-icons {
-                left: 5px;
+            .hero-subtitle {
+                font-size: 18px;
             }
 
-            .logo {
-                width: 35px;
-                height: 35px;
+            .section-title {
+                font-size: 28px;
             }
 
-            .logo::after {
-                font-size: 0.7rem;
+            .section-description {
+                font-size: 14px;
+            }
+
+            .about-title {
+                font-size: 28px;
+            }
+
+            .about-intro {
+                font-size: 18px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mobile-menu {
+                width: 90%;
+            }
+
+            .mobile-menu a {
+                font-size: 20px;
+                padding: 15px 0;
+            }
+
+            #writing .work-item-image {
+                min-height: 180px;
+                max-height: 250px;
+            }
+
+            #webdesign .work-item-image {
+                min-height: 200px;
+                max-height: 350px;
+            }
+
+            #instructional .work-item-image {
+                min-height: 200px;
+                max-height: 350px;
+            }
+        }
+        /* iPad Pro and larger tablets (1024px - 1366px) */
+        @media (min-width: 1025px) and (max-width: 1366px) {
+            #webdesign .work-gallery {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            #webdesign .work-item:nth-child(1),
+            #webdesign .work-item:nth-child(2) {
+                grid-column: span 2;
+            }
+
+            /* Image 3 - centered, full width */
+            #webdesign .work-item:nth-child(3) {
+                grid-column: 1 / -1;
+            }
+
+            /* Image 4 - centered, full width */
+            #webdesign .work-item:nth-child(4) {
+                grid-column: 1 / -1;
+            }
+
+            /* Image 5 - centered, full width */
+            #webdesign .work-item:nth-child(5) {
+                grid-column: 1 / -1;
+            }
+
+            #webdesign .work-item:nth-child(6),
+            #webdesign .work-item:nth-child(7),
+            #webdesign .work-item:nth-child(8) {
+                grid-column: span 4;
+            }
+
+            #webdesign .work-item-image {
+                height: auto !important;
+                min-height: 200px;
+                max-height: 350px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Social Icons -->
-    <div class="social-icons">
-        <a href="https://www.linkedin.com/in/nofemelepumla" class="social-icon" title="LinkedIn">
-            <svg viewBox="0 0 24 24">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-            </svg>
-        </a>
-        
-        <!-- Changed GitHub icon to Projects icon and updated link -->
-        <a href="projects.html" class="social-icon" title="Projects">
-            <svg viewBox="0 0 24 24">
-                <path d="M16,6L18.29,8.29L13.41,13.17L9.41,9.17L2,16.59L3.41,18L9.41,12L13.41,16L19.71,9.71L22,12V6"/>
-            </svg>
-        </a>
-        
-        <a href="hireme.html" class="social-icon" title="Contact Me">
-            <svg viewBox="0 0 24 24">
-                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-            </svg>
-        </a>
-        
-        <button class="social-icon theme-toggle" onclick="toggleTheme()" title="Glow up">
-            <svg viewBox="0 0 24 24">
-                <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"/>
-            </svg>
-        </button>
+
+    <nav>
+        <div class="nav-left">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#writing">Writing</a>
+            <a href="#webdesign">Web Design</a>
+            <a href="#instructional">Instructional Design</a>
+        </div>
+        <div class="nav-right">
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#writing">Writing</a>
+        <a href="#webdesign">Web Design</a>
+        <a href="#instructional">Instructional Design</a>
+        <a href="#contact">Contact</a>
     </div>
 
-    <!-- Navigation Bar -->
-    <div class="nav-tabs">
-        <!-- Updated logo to be a circular photo container -->
-        <div class="logo">
-            <!-- Replace 'your-photo.jpg' with the actual path to your photo -->
-            <img src="images/pp2.webp" alt="Profile" onerror="this.style.display='none'">
-        </div>
-        
-        <!-- Hamburger Menu -->
-        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
 
-        <!-- Navigation Links -->
-        <div class="nav-links" id="navLinks">
-            <a href="index.html">
-                <svg viewBox="0 0 24 24">
-                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-                </svg>
-                Home
-            </a>
-            <a href="about.html">
-                <svg viewBox="0 0 24 24">
-                    <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 7.5V9M15 10.5V12.5L21 13V11L15 10.5ZM11 14V16H9L11 22H13L11 16H13V14H11ZM3 12H9V14H3V12ZM3 16H9V18H3V16ZM3 8H9V10H3V8Z"/>
-                </svg>
-                About
-            </a>
-            <a href="projects.html">
-                <svg viewBox="0 0 24 24">
-                    <path d="M16,6L18.29,8.29L13.41,13.17L9.41,9.17L2,16.59L3.41,18L9.41,12L13.41,16L19.71,9.71L22,12V6"/>
-                </svg>
-                Projects
-            </a>
-            <a href="hireme.html">
-                <svg viewBox="0 0 24 24">
-                    <path d="M20,6C20.58,6 21.05,6.2 21.42,6.59C21.8,7 22,7.45 22,8V19C22,19.55 21.8,20 21.42,20.41C21.05,20.8 20.58,21 20,21H4C3.42,21 2.95,20.8 2.58,20.41C2.2,20 2,19.55 2,19V8C2,7.45 2.2,7 2.58,6.59C2.95,6.2 3.42,6 4,6H8V4C8,3.42 8.2,2.95 8.58,2.58C8.95,2.2 9.42,2 10,2H14C14.58,2 15.05,2.2 15.42,2.58C15.8,2.95 16,3.42 16,4V6H20M4,8V19H20V8H4M10,4V6H14V4H10Z"/>
-                </svg>
-                Hire Me
-            </a>
+    <section id="home">
+        <div class="section-content">
+            <h1 class="hero-title">PORTFOLIO</h1>
+            <p class="hero-subtitle">Pumla Nofemele</p>
         </div>
-    </div>
+    </section>
 
-    <!-- Main Container -->
-    <div class="main-container">
-        <!-- Hero Content -->
-        <div class="hero-content">
-            <div class="hero-section">
-                <h1>I build clean, user-friendly websites, create engaging social content, and design digital projects so you can flourish.</h1>
+    <section id="about">
+        <div class="section-content">
+            <div class="about-container">
+                <div class="about-image">
+                    <img src="images/Capture.webp" alt="Dr. Pumla Nofemele">
+                </div>
+                <div class="about-text">
+                    <div class="section-label">MY BIO</div>
+                    <h2 class="about-title">About Me</h2>
+                    <p class="about-intro">Hello</p>
+                    <p class="about-description">
+                       This is my portfolio of writing, web design, and instructional design; a blend of my lecturer's understanding of learning, a researcher's eye for detail, and a creative soul's passion for design and communication. My work brings together storytelling, design, and learning to help people connect, understand, and engage. For my full professional background, you can visit my LinkedIn.
+                    </p>
+
+                    <div class="skills-container">
+                        <h3 class="skills-title">Skills</h3>
+                        <div class="skills-grid">
+                            <div class="skill-block">Content Writing</div>
+                            <div class="skill-block">Research</div>
+                            <div class="skill-block">Social Media</div>
+                            <div class="skill-block">Blogging</div>
+                            <div class="skill-block">Podcasting & Facilitation</div>
+                            <div class="skill-block">Web Design (HTML, CSS & JavaScript)</div>
+                            <div class="skill-block">User Experience (UX) Research</div>
+                            <div class="skill-block">Learning Material Development</div>
+                            <div class="skill-block">E-Learning Development (LMS Familiarity)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="writing">
+        <div class="section-content">
+            <div class="section-label"><i class="fas fa-pen-fancy"></i> 01 — Writing</div>
+            <h2 class="section-title">Words That Move</h2>
+            <div class="section-description">
+                <p>Research, storytelling, news headlines that are unbiased, thought provoking captions and moving people to action.</p>
+            </div>
+            <div class="work-gallery">
+                <div class="work-item">
+                    <a href="https://www.instagram.com/p/DCPQ4Clt3YO/">
+                        <img src="images/mental.webp" alt="Article" class="work-item-image">
+                        <div class="work-item-content">
+                            <h3 class="work-item-title">Awareness Campaign Poster</h3>
+                            <p class="work-item-description">💫Real strength starts with self-care, let's make men's health a priority this month and beyond!
+                                💫Let's reshape traditional stereotypes like those that encourage silence, and promote harmful 'real men' narratives. Let's Go!!
+                                ❤️👌🏽⋆⁺₊⋆ ☀︎ ⋆⁺₊⋆</p>
+                            <span class="work-item-link">Read Full Story</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="work-item">
+                    <a href="https://wp.me/pcOCA7-gR">
+                        <img src="images/vaw1.webp" alt="Blog Post" class="work-item-image">
+                        <div class="work-item-content">
+                            <h3 class="work-item-title">Awareness Campaign Poster</h3>
+                            <p class="work-item-description">The 16 Days of Activism is an annual global campaign that begins on 25 November, marking the International Day for the Elimination of Violence against Women, and runs until 10 December; International Human Rights Day.</p>
+                            <span class="work-item-link">Read Full Story</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="work-item">
+                    <a href="https://reflectivelivinghub.wordpress.com/2024/05/20/what-is-my-contemporary-reflection-on-the-son-of-man-painting-by-surrealist-rene-magritte/">
+                        <img src="images/son2.webp" alt="Content" class="work-item-image">
+                        <div class="work-item-content">
+                            <h3 class="work-item-title">Social Analysis</h3>
+                            <p class="work-item-description">Reflection on 'Son of Man' by René Magritte. Art is always open to interpretation. This piece is profound, mystifying, and obscure, all hallmark features of Surrealism. Belgian Surrealist painter René Magritte painted 'Son of Man' as a self-portrait...</p>
+                            <span class="work-item-link">Read Full Story</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="work-item">
+                    <a href="https://reflectivelivinghub.wordpress.com/2025/03/10/does-the-clean-girl-aesthetic-have-a-hidden-bias/">
+                        <img src="images/cleanggirl1.webp" alt="Copy" class="work-item-image">
+                        <div class="work-item-content">
+                            <h3 class="work-item-title">Trend Commentary</h3>
+                            <p class="work-item-description">Does the Clean Girl Aesthetic Have a Hidden Bias? The clean girl aesthetic is everywhere. It's all about minimalism; slick buns, tiny hoop earrings, natural makeup, naked manicures, and neutral, well-fitted outfits. But is there more to this trend?</p>
+                            <span class="work-item-link">Read Full Story</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="work-item">
+                    <a href="https://wp.me/pcOCA7-jW">
+                        <img src="images/moodfits.webp" alt="Editorial" class="work-item-image">
+                        <div class="work-item-content">
+                            <h3 class="work-item-title"> Social Research</h3>
+                            <p class="work-item-description">Gen Z Wardrobes: The Mood of Gender Free Fits. Genderless fashion provides alternatives for self-expression; not just for individuals who identify outside of the gender binary, but also for those who want to showcase their personality beyond gender.</p>
+                            <span class="work-item-link">Read Full Story</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="work-item">
+                    <a href="https://socialmoodlabel.wordpress.com/newsletters/">
+                        <img src="images/newsletter1.webp" alt="Editorial" class="work-item-image">
+                        <div class="work-item-content">
+                            <h3 class="work-item-title">Newsletters</h3>
+                            <p class="work-item-description">Newsletter creation is so satisfying. Consolidating all the events, activities and special moments allow me to combine storytelling with creativity.</p>
+                            <span class="work-item-link">Read Full Story</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="work-item">
+                    <a href="https://www.instagram.com/p/DIJdm56tc_J/?img_index=1">
+                        <img src="images/space3.webp" alt="Article 7" class="work-item-image">
+                        <div class="work-item-content">
+                            <h3 class="work-item-title">Creative Content Writing & Social Posts</h3>
+                            <p class="work-item-description"> 😁⚽️🏀MOOD 44. PRESS PLAY ON FUN: WHERE DID OUR HOBBIES GO? This month, we focus on reigniting our hobbies & figuring out where they disappeared to.
+                                The world is obsessed with hustle, social media, and material success, which has resulted in our hobbies quietly disappearing. Remember spraypainting...</p>
+                            <span class="work-item-link">Read Full Story</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="work-item">
+                    <a href="https://www.instagram.com/p/DJjKPRDMDTp/">
+                        <img src="images/pinky.webp" alt="Article 8" class="work-item-image">
+                        <div class="work-item-content">
+                            <h3 class="work-item-title">Creative Content Writing & Social Posts</h3>
+                            <p class="work-item-description">CHAPTER 2: UNEASY ENCOUNTERS WITH THE FEMININE SHELF 🛒🌟💪🏿
+                                Most men become uncomfortable around feminine products in the grocery store. They start looking around and acting sus 🤨. I want to say relax yourself, Do you think you are being watched? Judged? Do you think your masculinity......</p>
+                            <span class="work-item-link">Read Full Story</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="work-item">
+                    <a href="https://www.tiktok.com/@gazilliongoals">
+                        <img src="images/mamelodi.webp" alt="Article" class="work-item-image">
+                        <div class="work-item-content">
+                            <h3 class="work-item-title">Creative Content Writing & Social Posts</h3>
+                            <p class="work-item-description">Congratulations to Mamelodi Sundowns! On Wednesday evening, Sundowns were officially crowned Betway Premiership champions after a commanding 3-0 victory over Chippa United in East London. This historic win marks their eighth consecutive league title...</p>
+                            <span class="work-item-link">Read Full Story</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <section id="webdesign">
+    <div class="section-content">
+        <div class="section-label"><i class="fas fa-laptop-code"></i> 02 — Web Design</div>
+        <h2 class="section-title">Digital Projects</h2>
+        <div class="section-description">
+            <p>Combining website design with UX research; shaping digital experiences informed by real user needs.</p>
+        </div>
+        <div class="work-gallery">
+             <div class="work-item">
+                <a href="https://gazillion-goals.netlify.app/" target="_blank" style="text-decoration: none; color: inherit;">
+                    <img src="images/ggggggazill.webp" alt="Football" class="work-item-image">
+                    <div class="work-item-content">
+                        <h3 class="work-item-title">Featured Project: Gazillion Goals Football Website</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="work-item">
+                <a href="https://royalrabbitsecd.netlify.app/" target="_blank" style="text-decoration: none; color: inherit;">
+                    <img src="images/rabbitsattack.webp" alt="Community" class="work-item-image">
+                    <div class="work-item-content">
+                        <h3 class="work-item-title">Featured Project: ECD Website<h3>
+                    </div>
+                </a>
+            </div>
+            <div class="work-item">
+                <a href="https://socialmoodlabel.netlify.app/" target="_blank" style="text-decoration: none; color: inherit;">
+                    <img src="images/sml400.webp" alt="Research" class="work-item-image">
+                    <div class="work-item-content">
+                        <h3 class="work-item-title">Featured Project: Social Research Website Landing Page</h3>
+                    </div>
+                </a>
+            </div>
+
+           <div class="work-item">
+                <a href="https://lumkaportfolio.netlify.app/" target="_blank" style="text-decoration: none; color: inherit;">
+                    <img src="images/LUMKI3-Copy.webp" alt="Portfolio" class="work-item-image">
+                    <div class="work-item-content">
+                        <h3 class="work-item-title">Featured Project: Portfolio of Evidence</h3>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="work-item">
+                    <img src="images/newuserpersona.webp" alt="Project 5" class="work-item-image">
+                    <div class="work-item-content">
+                        <h3 class="work-item-title">UX Research Artifact: User Persona</h3>
+                    </div>
+            </div>
+
+            <div class="work-item">
+                    <img src="images/userjourneymap.webp" alt="Project 6" class="work-item-image">
+                    <div class="work-item-content">
+                        <h3 class="work-item-title">UX Research Artifact: User Journey Map</h3>
+                    </div>
+            </div>
+
+            <div class="work-item">
+                    <img src="images/empathy map.webp" alt="Project 7" class="work-item-image">
+                    <div class="work-item-content">
+                        <h3 class="work-item-title">UX Research Artifact: Empathy Map</h3>
+                    </div>
+            </div>
+
+            <div class="work-item">
+                    <img src="images/USERFLOW.webp" alt="Project 8" class="work-item-image">
+                    <div class="work-item-content">
+                        <h3 class="work-item-title">UX Research Artifact: User Flow</h3>
+                    </div>
             </div>
         </div>
     </div>
+</section>
 
-    <!-- Footer -->
-      <footer>
-        <div class="footer-message">Love It✨</div>
+    <section id="instructional">
+        <div class="section-content">
+            <div class="section-label"><i class="fas fa-lightbulb"></i> 03 — Instructional Design</div>
+            <h2 class="section-title">E-Learning Materials and Designs</h2>
+            <div class="section-description">
+                <p>Designing learning experiences that transform knowledge into action. Through careful analysis, creative problem-solving, and user-centered design, I create educational solutions that engage learners and achieve measurable results.</p>
+            </div>
+            <div class="work-gallery">
+                <div class="work-item">
+                    <img src="images/STORYYYY.webp" alt="Storyboard" class="work-item-image">
+                    <div class="work-item-content">
+                        <h3 class="work-item-title">eLearning Storyboard</h3>
+                        <p class="work-item-description">I designed this storyboard for my module in Talent LMS to serve as a clear blueprint for the learning experience. It outlines the content plan, ensures a logical flow, and acts as an effective communication tool for seamless learning design.</p>
+                    </div>
+                </div>
+                <div class="work-item">
+                    <img src="images/REALOBJECTIVE.webp" alt="Objectives" class="work-item-image">
+                    <div class="work-item-content">
+                        <h3 class="work-item-title">Learning Objectives</h3>
+                        <p class="work-item-description">To write the above learning objectives I employed Bloom's Taxonomy. This framework provides strong guide for writing clear, measurable learning objectives.</p>
+                    </div>
+                </div>
+                <div class="work-item">
+                    <img src="images/look.webp" alt="Authoring" class="work-item-image">
+                    <div class="work-item-content">
+                        <h3 class="work-item-title">Authoring Tools</h3>
+                        <p class="work-item-description">In the above example I created a drag and drop exercise using Lumi, an H5P authoring tool. Tools like Lumi help in developing engaging, memorable, hands on, interactive content.</p>
+                    </div>
+                </div>
+                <div class="work-item">
+                    <img src="images/finallms (1).webp" alt="Assessment" class="work-item-image">
+                    <div class="work-item-content">
+                        <h3 class="work-item-title">Assessment on an LMS</h3>
+                        <p class="work-item-description">In this example I have created an assessments quiz on Moodle Cloud. Quizzes provide immediate feedback to learners, helping them identify gaps in understanding while the material is still fresh.</p>
+                    </div>
+                </div>
+                <div class="work-item">
+                    <img src="images/idnownowNOW.webp" alt="Assessment" class="work-item-image">
+                    <div class="work-item-content">
+                        <h3 class="work-item-title">Powerpoint Presentations</h3>
+                        <p class="work-item-description">Here is an example of a Powerpoint Presentation I created. This slide demonstrates my ability to design clear, visually engaging instructional content that supports learner understanding.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <section id="contact">
+        <div class="section-content">
+            <div class="section-label"><i class="fas fa-envelope"></i> 04 — Contact</div>
+            <h2 class="section-title">Like the Look?</h2>
+            <div class="contact-info">
+                <p>Get in Touch</p>
+                <p><a href="mailto:pumlawebofwork@gmail.com"><i class="fas fa-envelope"></i> pumlawebofwork@gmail.com</a></p>
+                <p><a href="https://www.linkedin.com/in/nofemelepumla/" target="_blank"><i class="fab fa-linkedin"></i> Connect on LinkedIn</a></p>
+         </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-message">Love It ✨</div>
         &copy; Pumla P N. 2025 All rights reserved.
     </footer>
 
     <script>
-        function toggleMenu() {
-            const navLinks = document.getElementById('navLinks');
-            const hamburger = document.getElementById('hamburger');
-            
-            navLinks.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        }
+    // Hamburger menu functionality
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const overlay = document.getElementById('overlay');
+    const mobileLinks = mobileMenu.querySelectorAll('a');
 
-        function toggleTheme() {
-            const body = document.body;
-            const currentTheme = body.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            
-            body.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-        }
+    function toggleMenu() {
+        hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+        overlay.classList.toggle('active');
+        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+    }
 
-        // Load saved theme on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            const savedTheme = localStorage.getItem('theme') || 'dark';
-            document.body.setAttribute('data-theme', savedTheme);
+    hamburger.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu);
+
+    // Close menu when clicking a link
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            toggleMenu();
         });
+    });
 
-        // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const navLinks = document.getElementById('navLinks');
-            const hamburger = document.getElementById('hamburger');
-            const navTabs = document.querySelector('.nav-tabs');
-            
-            if (!navTabs.contains(event.target)) {
-                navLinks.classList.remove('active');
-                hamburger.classList.remove('active');
+    // Smooth scroll for all navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             }
         });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Close menu when clicking on a nav link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', function() {
-                const navLinks = document.getElementById('navLinks');
-                const hamburger = document.getElementById('hamburger');
-        
-                navLinks.classList.remove('active');
-                hamburger.classList.remove('active');
-            });
-        });  
-
-        // Close menu when scrolling
-        let scrollTimeout;
-        window.addEventListener('scroll', function() {
-            const navLinks = document.getElementById('navLinks');
-            const hamburger = document.getElementById('hamburger');
-    
-            if (navLinks.classList.contains('active')) {
-                clearTimeout(scrollTimeout);
-                scrollTimeout = setTimeout(function() {
-                    navLinks.classList.remove('active');
-                    hamburger.classList.remove('active');
-                }, 100);
-            }
-        });
-        
+    });
     </script>
 </body>
 </html>
