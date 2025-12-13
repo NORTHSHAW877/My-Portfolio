@@ -1,5 +1,7 @@
 🌐 My Portfolio
 
+<img width="102" height="20" alt="image" src="https://github.com/user-attachments/assets/161b06cf-529c-4af4-89a0-001f507b1cb1" />
+
 A bold, modern, and visually striking personal portfolio website designed to showcase my multidisciplinary work across writing, instructional design, and web design. The site uses a vibrant red base complemented by neon accent effects to create a strong visual identity that feels energetic, contemporary, and confident.
 
 Built entirely with pure HTML, CSS, and vanilla JavaScript, this portfolio prioritizes performance, accessibility, and ease of customization—without relying on heavy frameworks. The result is a fast-loading, lightweight site that is easy to maintain and adapt as my work evolves. The layout is fully responsive, ensuring a seamless and consistent experience across desktops, tablets, and mobile devices.
