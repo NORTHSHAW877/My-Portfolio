@@ -1,6 +1,8 @@
 🌐 My Portfolio
 
-The site showcases selected work across these three areas and serves as a professional point of contact.
+<img width="102" height="20" alt="image" src="https://github.com/user-attachments/assets/986407b9-8772-41e4-829e-b667db55c220" />
+
+Personal portfolio website for Dr. Pumla Nofemele. The site showcases selected work across these three areas and serves as a professional point of contact.
 
 Features
 Animated side navigation with active section tracking
