@@ -1,1604 +1,505 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <title> Dr. Pumla Nofemele - Writing, Web Design & Instructional Design Portfolio</title>
-    <meta name="title" content="Pumla Nofemele - Writing, Web Design & Instructional Design Portfolio">
-    <meta name="description" content="Dr. Pumla Nofemele's creative portfolio showcasing content writing, research articles, social analysis, web design, and instructional design. Blending research expertise with creative storytelling.">
-    <meta name="keywords" content="content writing, research writing, social analysis, trend commentary, news writing, web design, instructional design, e-learning, UX research, portfolio, Pumla Nofemele">
-    <meta name="author" content="Dr. Pumla Nofemele">
-    <meta name="robots" content="index, follow">
-    
-    <!-- CANONICAL URL - CHANGE "yourwebsite.com" TO YOUR ACTUAL DOMAIN -->
-    <link rel="canonical" href="https://pumlaportfolio.co.za/">
-
-    <!-- OPEN GRAPH / FACEBOOK / LINKEDIN -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://pumlaportfolio.co.za/">
-    <meta property="og:title" content="Pumla Nofemele - Writing, Web Design & Instructional Design">
-    <meta property="og:description" content="Creative portfolio blending research expertise with content writing, web design, and instructional design. Explore articles, web projects, and learning materials.">
-    <meta property="og:image" content="https://pumlaportfolio.co.za/images/portfolioimage.png">
-
-    <!-- TWITTER -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://pumlaportfolio.co.za/">
-    <meta property="twitter:title" content="Pumla Nofemele - Writing, Web Design & Instructional Design">
-    <meta property="twitter:description" content="Creative portfolio showcasing content writing, research, web design, and instructional design work.">
-    <meta property="twitter:image" content="https://pumlaportfolio.co.za/images/portfolioimage.png">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #ea8066 0%, #a24b4b 100%);
-            color: white;
-            overflow-x: hidden;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 20px 50px;
-            background: rgba(209, 4, 4, 0.836);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .nav-left {
-            display: flex;
-            gap: 5px;
-            align-items: center;
-        }
-
-        .nav-right {
-            display: flex;
-            align-items: center;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 0;
-            font-size: 14px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            border-radius: 0;
-            transition: all 0.3s ease;
-            font-weight: 600;
-            font-family: 'Arial Black', 'Arial Bold', sans-serif;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        nav a:hover {
-            background: transparent;
-            transform: none;
-            opacity: 0.6;
-        }
-        
-        .nav-left a:not(:last-child)::after {
-            content: ' //';
-            margin-left: 5px;
-            opacity: 0.4;
-        }
-
-        /* Hamburger Menu */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            z-index: 1001;
-            width: 30px;
-            height: 24px;
-            justify-content: space-between;
-        }
-
-        .hamburger span {
-            width: 100%;
-            height: 3px;
-            background: white;
-            border-radius: 3px;
-            transition: all 0.3s ease;
-        }
-
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(8px, 8px);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(8px, -8px);
-        }
-
-        /* Mobile Menu */
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            left: -100%;
-            width: 80%;
-            max-width: 400px;
-            height: 100vh;
-            background: linear-gradient(135deg, rgba(209, 4, 4, 0.98) 0%, rgba(162, 75, 75, 0.98) 100%);
-            backdrop-filter: blur(20px);
-            padding: 80px 40px 40px;
-            transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: 999;
-            box-shadow: 5px 0 30px rgba(0, 0, 0, 0.3);
-            overflow-y: auto;
-        }
-
-        .mobile-menu.active {
-            left: 0;
-        }
-
-        .mobile-menu a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            font-size: 24px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            padding: 20px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-        }
-
-        .mobile-menu a:hover {
-            padding-left: 20px;
-            color: #ffcc00;
-        }
-
-        .mobile-menu a:last-child {
-            border-bottom: none;
-        }
-
-        /* Overlay */
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 998;
-        }
-
-        .overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        section {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 120px 50px 80px;
-            position: relative;
-        }
-
-        .section-content {
-            max-width: 1200px;
-            width: 100%;
-        }
-
-        .section-label {
-            font-size: 12px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            opacity: 0.6;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        .section-title {
-            font-size: 72px;
-            font-weight: 700;
-            letter-spacing: -2px;
-            margin-bottom: 30px;
-            line-height: 1.1;
-        }
-
-        .section-description {
-            font-size: 18px;
-            line-height: 1.8;
-            max-width: 650px;
-            opacity: 0.9;
-            margin-bottom: 60px;
-            font-weight: 300;
-        }
-
-        .section-title,
-        .about-title,
-        h1 {
-            background: linear-gradient(90deg, #ffffff, #ffcc00, #ff6b6b, #ffffff);
-            background-size: 300% 100%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradientShift 4s ease infinite;
-        }
-
-        h3 {
-            font-weight: 700;
-            background: linear-gradient(90deg, #ffffff, #ffcc00,#ff6b6b, #ffffff);
-            background-size: 300% 100%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradientShift 4s ease infinite;
-        }
-
-        @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        .work-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .work-item {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .work-item:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 
-                0 20px 60px rgba(0, 0, 0, 0.3),
-                0 0 0 1px rgba(255, 255, 255, 0.3);
-            background: rgba(255, 255, 255, 0.12);
-        }
-
-        .work-item-image {
-            width: 100%;
-            height: 360px;
-            object-fit: contain;
-            display: block;
-            transition: transform 0.4s ease;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 10px;
-        }
-        
-        .work-item:hover .work-item-image {
-            transform: scale(1.05);
-        }
-
-        .work-item-content {
-            padding: 30px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .work-item-title {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            letter-spacing: -0.5px;
-            line-height: 1.3;
-        }
-
-        .work-item-description {
-            font-size: 14px;
-            line-height: 1.7;
-            opacity: 0.85;
-            margin-bottom: 20px;
-            flex-grow: 1;
-            font-weight: 300;
-        }
-
-        .work-item-link {
-            color: white;
-            text-decoration: none;
-            font-size: 12px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: gap 0.3s ease;
-        }
-
-        .work-item-link:hover {
-            gap: 12px;
-        }
-
-        .work-item-link::after {
-            content: '→';
-            font-size: 16px;
-        }
-
-        /* Hero Section */
-        #home {
-            text-align: center;
-            background: linear-gradient(135deg, #af1d1d 0%, #e07847 50%, #e20c0c 100%);
-            position: relative;
-            min-height: 50vh;
-        }
-
-        #home::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.08) 35px, rgba(255,255,255,.08) 70px),
-                repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(0,0,0,.08) 35px, rgba(0,0,0,.08) 70px);
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        #home .section-content {
-            position: relative;
-            z-index: 2;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-title {
-            font-size: 120px;
-            font-weight: 800;
-            letter-spacing: -4px;
-            margin-bottom: 20px;
-            background: linear-gradient(90deg, #ffffff, #ffcc00, #ff6b6b, #ffffff);
-            background-size: 300% 100%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: fadeInUp 1s ease-out, gradientShift 4s ease infinite;
-        }
-
-        .hero-subtitle {
-            font-size: 48px;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            opacity: 1;
-            font-weight: 900;
-            background: linear-gradient(90deg, #ffffff, #ffcc00, #ffffff);
-            background-size: 300% 100%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradientShift 4s ease infinite;
-        }
-
-        /* About Section */
-        #about {
-            background: linear-gradient(135deg, #d91e1e 0%, #b83838 100%);
-            min-height: 70vh;
-            padding: 80px 20px; /* Added padding here */
-        }
-
-        .about-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-            max-width: 1400px; /* Added max-width */
-            margin: 0 auto; /* Center the container */
-            padding: 0 20px; /* Additional padding */
-        }
-
-        .about-image {
-            width: 100%;
-            height: 500px;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            position: relative;
-        }
-
-        .about-image::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(255, 0, 98, 0.2), transparent);
-            z-index: 1;
-        }
-
-        .about-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain; /* Changed from cover to contain */
-            object-position: center;
-            display: block;
-        }
-
-        .about-text {
-            padding: 20px;
-        }
-
-        .about-title {
-            font-size: 64px;
-            font-weight: bold;
-            letter-spacing: 3px;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            line-height: 1.1;
-            word-wrap: break-word; /* Prevent text overflow */
-        }
-
-        .about-description {
-            font-size: 18px;
-            line-height: 1.8;
-            margin-bottom: 25px;
-            opacity: 0.95;
-            word-wrap: break-word;
-        }
-
-        .skills-container {
-            margin-top: 40px;
-        }
-
-        .skills-title {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            opacity: 0.9;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 15px;
-        }
-
-        .skill-block {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 12px;
-            padding: 15px 20px;
-            font-size: 14px;
-            font-weight: 600;
-            text-align: center;
-            transition: all 0.3s ease;
-            cursor: default;
-            word-wrap: break-word;
-        }
-
-        .skill-block:hover {
-            background: rgba(255, 255, 255, 0.25);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Tablet and Below - Stack Layout */
-        @media (max-width: 1024px) {
-            #about {
-                padding: 60px 20px;
-            }
-            
-            .about-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-                padding: 0 30px;
-            }
-            
-            .about-image {
-                height: 450px;
-                max-width: 600px;
-                margin: 0 auto;
-            }
-            
-            .about-text {
-                padding: 0;
-            }
-            
-            .about-title {
-                font-size: 48px;
-            }
-            
-            .skills-grid {
-                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            }
-        }
-
-        /* Mobile Landscape and Below */
-        @media (max-width: 768px) {
-            #about {
-                padding: 50px 15px;
-            }
-            
-            .about-container {
-                gap: 35px;
-                padding: 0 15px;
-            }
-            
-            .about-image {
-                height: 400px;
-                max-width: 100%;
-            }
-            
-            .about-title {
-                font-size: 36px;
-                letter-spacing: 2px;
-                margin-bottom: 20px;
-            }
-            
-            .about-description {
-                font-size: 16px;
-                line-height: 1.6;
-                margin-bottom: 20px;
-            }
-            
-            .skills-container {
-                margin-top: 30px;
-            }
-            
-            .skills-title {
-                font-size: 20px;
-            }
-            
-            .skills-grid {
-                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-                gap: 12px;
-            }
-            
-            .skill-block {
-                padding: 12px 10px;
-                font-size: 13px;
-            }
-        }
-
-        /* Small Mobile */
-        @media (max-width: 480px) {
-            #about {
-                padding: 40px 15px;
-            }
-            
-            .about-container {
-                gap: 30px;
-                padding: 0 10px;
-            }
-            
-            .about-image {
-                height: 350px;
-                border-radius: 15px;
-            }
-            
-            .about-title {
-                font-size: 32px;
-                letter-spacing: 1px;
-            }
-            
-            .about-description {
-                font-size: 15px;
-            }
-            
-            .skills-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 10px;
-            }
-            
-            .skill-block {
-                padding: 10px 8px;
-                font-size: 12px;
-                border-radius: 10px;
-            }
-        }
-
-        /* Extra Small Devices (320px - Galaxy Fold, etc.) */
-        @media (max-width: 320px) {
-            #about {
-                padding: 30px 10px;
-            }
-            
-            .about-container {
-                padding: 0 5px;
-            }
-            
-            .about-image {
-                height: 280px;
-            }
-            
-            .about-title {
-                font-size: 26px;
-            }
-           
-            .about-description {
-                font-size: 14px;
-            }
-            
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Writing Section */
-        #writing {
-            background: linear-gradient(135deg, #fc1414 0%, #ad2e2e 100%);
-        }
-
-        #writing .work-item-image {
-            height: auto;
-            min-height: 250px;
-            max-height: 400px;
-            object-fit: contain;
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        #writing .work-gallery {
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        }
-
-        #writing .work-item {
-            display: flex;
-            flex-direction: column;
-        }
-
-        #writing .work-item-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            padding: 1.5rem;
-        }
-
-        #writing .work-item:nth-child(7) .work-item-image {
-            object-position: top;
-        }
-
-        #writing .work-item a {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            text-decoration: none;
-            color: inherit;
-            transition: transform 0.3s ease;
-        }
-
-        #writing .work-item a:hover {
-            transform: translateY(-5px);
-        }
-
-        /* Web Design Section */
-        #webdesign .work-gallery {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 20px;
-            max-width: 1200px;
-            margin-left: auto;
-        }
-
-        #webdesign .work-item:nth-child(1),
-        #webdesign .work-item:nth-child(2),
-        #webdesign .work-item:nth-child(3) {
-            grid-column: span 2;
-        }
-
-        #webdesign .work-item:nth-child(4),
-        #webdesign .work-item:nth-child(5) {
-            grid-column: span 3;
-        }
-
-        #webdesign .work-item:nth-child(6),
-        #webdesign .work-item:nth-child(7),
-        #webdesign .work-item:nth-child(8) {
-            grid-column: span 6;
-        }
-
-        /* ALL images use contain to prevent cropping */
-        #webdesign .work-item-image {
-            height: 400px;
-            object-fit: contain;
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-
-        #webdesign .work-item:nth-child(4) .work-item-image,
-        #webdesign .work-item:nth-child(5) .work-item-image {
-            height: 350px;
-        }
-
-        #webdesign .work-item:nth-child(6) .work-item-image,
-        #webdesign .work-item:nth-child(7) .work-item-image {
-            height: 500px;
-        }
-
-        #webdesign .work-item:nth-child(8) .work-item-image {
-            height: 550px;
-        }
-
-        /* Instructional Design Section */
-        #instructional {
-            background: linear-gradient(135deg, #f72828 0%, #690c0c 100%);
-        }
-
-        #instructional .work-gallery {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-            max-width: 1150px;
-        }
-
-        #instructional .work-item-image {
-            height: 500px;
-        }
-
-        #instructional .work-item:nth-child(1),
-        #instructional .work-item:nth-child(2) {
-            grid-column: span 2;
-        }
-
-        #instructional .work-item:nth-child(3),
-        #instructional .work-item:nth-child(4) {
-            grid-column: span 1;
-        }
-
-        #instructional .work-item:nth-child(5) {
-            grid-column: span 2;
-        }
-
-        /* Contact Section */
-        #contact {
-            background: linear-gradient(135deg, #fe4f6c 0%, #fe8700 100%);
-            min-height: 50vh;
-            position: relative;
-            padding: 80px 20px;
-        }
-
-        #contact::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.08) 35px, rgba(255,255,255,.08) 70px),
-                repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(0,0,0,.08) 35px, rgba(0,0,0,.08) 70px);
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        #contact .section-content {
-            position: relative;
-            z-index: 2;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .contact-info {
-            font-size: 28px;
-            line-height: 2;
-        }
-
-        .contact-info p:first-child {
-            font-size: 18px;
-            opacity: 0.8;
-            margin-bottom: 10px;
-            font-weight: 300;
-        }
-
-        .contact-info p {
-            margin-bottom: 15px;
-        }
-
-        .contact-info a {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.4);
-            transition: border-color 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            word-break: break-word;
-            overflow-wrap: break-word;
-            max-width: 100%;
-        }
-
-        .contact-info a i {
-            flex-shrink: 0; /* Prevent icon from shrinking */
-        }
-
-        .contact-info a:hover {
-            border-color: white;
-        }
-
-        /* Tablet */
-        @media (max-width: 1024px) {
-            #contact {
-                padding: 70px 20px;
-            }
-            
-            .contact-info {
-                font-size: 24px;
-            }
-            
-            .contact-info p:first-child {
-                font-size: 17px;
-            }
-        }
-
-        /* Mobile Landscape and Below */
-        @media (max-width: 768px) {
-            #contact {
-                padding: 60px 20px;
-                min-height: auto;
-            }
-            
-            #contact .section-content {
-                padding: 0 15px;
-            }
-            
-            .contact-info {
-                font-size: 20px;
-                line-height: 1.8;
-            }
-            
-            .contact-info p:first-child {
-                font-size: 16px;
-                margin-bottom: 15px;
-            }
-            
-            .contact-info a {
-                font-size: 18px;
-            }
-        }
-
-        /* Small Mobile */
-        @media (max-width: 480px) {
-            #contact {
-                padding: 50px 12px;
-            }
-            
-            #contact .section-content {
-                padding: 0 10px;
-            }
-            
-            .contact-info {
-                font-size: 16px;
-                line-height: 1.6;
-            }
-            
-            .contact-info p:first-child {
-                font-size: 14px;
-                margin-bottom: 12px;
-            }
-            
-            .contact-info a {
-                font-size: 15px;
-                word-break: break-all;
-                flex-wrap: wrap; /* Allow wrapping */
-            }
-        }
-
-        /* Galaxy S8+ and similar (360-414px) */
-        @media (max-width: 414px) {
-            .contact-info a {
-                font-size: 14px;
-            }
-        }
-
-        /* Extra Small Devices (Galaxy Fold, S-320) */
-        @media (max-width: 320px) {
-            #contact {
-                padding: 40px 8px;
-            }
-            
-            #contact .section-content {
-                padding: 0 8px;
-            }
-            
-            .contact-info {
-                font-size: 14px;
-                line-height: 1.5;
-            }
-            
-            .contact-info p:first-child {
-                font-size: 12px;
-                margin-bottom: 10px;
-            }
-            
-            .contact-info a {
-                font-size: 11px; /* Very small for 320px */
-                word-break: break-all;
-                line-height: 1.4;
-                gap: 5px; /* Smaller gap */
-            }
-            
-            .contact-info a i {
-                font-size: 12px; /* Smaller icon */
-            }
-        }
-        
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 50px 20px;
-            background: rgb(134, 0, 0);
-            backdrop-filter: blur(10px);
-            color: #fff;
-            font-size: 0.9rem;
-            line-height: 1.8;
-        }
-
-        .footer-message {
-            margin-bottom: 10px;
-            font-style: italic;
-            opacity: 0.8;
-            font-weight: 300;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        /* Tablet Responsive (768px - 1024px) */
-        @media (max-width: 1024px) {
-            .section-title {
-                font-size: 56px;
-            }
-
-            .hero-title {
-                font-size: 80px;
-            }
-
-            .hero-subtitle {
-                font-size: 36px;
-            }
-
-            .about-container {
-                grid-template-columns: 400px 1fr;
-                gap: 40px;
-            }
-
-            .about-title {
-                font-size: 48px;
-            }
-
-            .about-intro {
-                font-size: 28px;
-            }
-
-            /* Web Design Grid for Tablet */
-            #webdesign .work-gallery {
-                grid-template-columns: 1fr;
-            }
-
-            #webdesign .work-item {
-                grid-column: span 1 !important;
-            }
-
-            #webdesign .work-item-image {
-                height: auto !important;
-                min-height: 300px;
-                max-height: 500px;
-                object-fit: contain !important;
-            }
-        }
-
-        /* Mobile Responsive (max-width: 768px) */
-        @media (max-width: 768px) {
-            /* Show hamburger menu */
-            .hamburger {
-                display: flex;
-            }
-
-            /* Hide desktop navigation */
-            .nav-left,
-            .nav-right {
-                display: none;
-            }
-
-            nav {
-                padding: 15px 20px;
-            }
-
-            section {
-                padding: 100px 20px 60px;
-                min-height: auto;
-            }
-
-            .section-title {
-                font-size: 36px;
-                letter-spacing: -1px;
-            }
-
-            .section-description {
-                font-size: 16px;
-            }
-
-            .hero-title {
-                font-size: 48px;
-                letter-spacing: -2px;
-            }
-
-            .hero-subtitle {
-                font-size: 24px;
-                letter-spacing: 2px;
-            }
-
-            /* Writing Section - Mobile */
-            #writing .work-gallery {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            #writing .work-item-image {
-                height: auto;
-                min-height: 200px;
-                max-height: 300px;
-                object-fit: contain;
-            }
-
-            /* Web Design Section - Mobile */
-            #webdesign .work-gallery {
-                grid-template-columns: 1fr !important;
-                gap: 20px;
-            }
-
-            #webdesign .work-item {
-                grid-column: span 1 !important;
-            }
-
-            #webdesign .work-item-image {
-                height: auto !important;
-                min-height: 250px;
-                max-height: 400px;
-                object-fit: contain !important;
-                background-color: rgba(255, 255, 255, 0.05);
-            }
-
-            /* Instructional Design - Mobile */
-            #instructional .work-gallery {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            #instructional .work-item {
-                grid-column: span 1 !important;
-            }
-
-            #instructional .work-item-image {
-                height: auto;
-                min-height: 250px;
-                max-height: 400px;
-                object-fit: contain;
-            }
-
-            .work-item-content {
-                padding: 20px;
-            }
-
-            .work-item-title {
-                font-size: 20px;
-            }
-
-            .about-container {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            
-            .about-image {
-                height: 350px;
-            }
-            
-            .about-title {
-                font-size: 32px;
-            }
-            
-            .about-intro {
-                font-size: 20px;
-            }
-
-            .about-description {
-                font-size: 16px;
-            }
-
-            .skills-grid {
-                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-                gap: 10px;
-            }
-
-            .skill-block {
-                font-size: 12px;
-                padding: 12px 15px;
-            }
-
-            .contact-info {
-                font-size: 20px;
-            }
-
-            .contact-info p:first-child {
-                font-size: 16px;
-            }
-        }
-
-        /* Small Mobile (max-width: 480px) */
-        @media (max-width: 480px) {
-            .hero-title {
-                font-size: 36px;
-            }
-
-            .hero-subtitle {
-                font-size: 18px;
-            }
-
-            .section-title {
-                font-size: 28px;
-            }
-
-            .section-description {
-                font-size: 14px;
-            }
-
-            .about-title {
-                font-size: 28px;
-            }
-
-            .about-intro {
-                font-size: 18px;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .mobile-menu {
-                width: 90%;
-            }
-
-            .mobile-menu a {
-                font-size: 20px;
-                padding: 15px 0;
-            }
-
-            #writing .work-item-image {
-                min-height: 180px;
-                max-height: 250px;
-            }
-
-            #webdesign .work-item-image {
-                min-height: 200px;
-                max-height: 350px;
-            }
-
-            #instructional .work-item-image {
-                min-height: 200px;
-                max-height: 350px;
-            }
-        }
-        /* iPad Pro and larger tablets (1024px - 1366px) */
-        @media (min-width: 1025px) and (max-width: 1366px) {
-            #webdesign .work-gallery {
-                grid-template-columns: repeat(4, 1fr);
-            }
-
-            #webdesign .work-item:nth-child(1),
-            #webdesign .work-item:nth-child(2) {
-                grid-column: span 2;
-            }
-
-            /* Image 3 - centered, full width */
-            #webdesign .work-item:nth-child(3) {
-                grid-column: 1 / -1;
-            }
-
-            /* Image 4 - centered, full width */
-            #webdesign .work-item:nth-child(4) {
-                grid-column: 1 / -1;
-            }
-
-            /* Image 5 - centered, full width */
-            #webdesign .work-item:nth-child(5) {
-                grid-column: 1 / -1;
-            }
-
-            #webdesign .work-item:nth-child(6),
-            #webdesign .work-item:nth-child(7),
-            #webdesign .work-item:nth-child(8) {
-                grid-column: span 4;
-            }
-
-            #webdesign .work-item-image {
-                height: auto !important;
-                min-height: 200px;
-                max-height: 350px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<title>Dr. Pumla Nofemele ┃ Portfolio</title>
+
+<!-- PRIMARY -->
+<meta name="description" content="Dr. Pumla Nofemele's creative portfolio showcasing research, social analysis, content and learning design, web design, and cybersecurity focused digital work.">
+<meta name="author" content="Dr. Pumla Nofemele">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://pumlaportfolio.co.za/">
+
+<!-- OPEN GRAPH (Facebook & LinkedIn) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pumlaportfolio.co.za/">
+<meta property="og:title" content="Pumla Nofemele ┃ Research, Content Design & Cybersecurity">
+<meta property="og:description" content="Dr. Pumla Nofemele's creative portfolio showcasing research, social analysis, content and learning design, web design, and cybersecurity focused digital work.">
+<meta property="og:image" content="https://pumlaportfolio.co.za/images/previewimage.png">
+
+<!-- TWITTER / X CARD -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://pumlaportfolio.co.za/">
+<meta name="twitter:title" content="Pumla Nofemele ┃ Research, Content Design & Cybersecurity">
+<meta name="twitter:description" content="Dr. Pumla Nofemele's creative portfolio showcasing research, social analysis, content and learning design, web design, and cybersecurity focused digital work.">
+<meta name="twitter:image" content="https://pumlaportfolio.co.za/images/previewimage.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --green:#00c896;--green-dim:#00a07a;
+  --green-glow:rgba(0,200,150,0.15);--green-glow2:rgba(0,200,150,0.07);
+  --bg:#0a0a0a;--bg2:#111111;--bg3:#161616;--bg4:#1a1a1a;
+  --text:#e8e8e8;--muted:rgba(232,232,232,0.5);--muted2:rgba(232,232,232,0.3);
+  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.05);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+
+/* ── SIDE NAV ── */
+.side-nav{position:fixed;right:28px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:20px;z-index:999}
+.side-nav a{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,0.15);border:1.5px solid rgba(255,255,255,0.25);transition:all .3s;display:block;position:relative;text-decoration:none}
+.side-nav a:hover,.side-nav a.active{background:var(--green);border-color:var(--green);box-shadow:0 0 12px rgba(0,200,150,0.6)}
+.side-nav a::before{content:attr(data-label);position:absolute;right:22px;top:50%;transform:translateY(-50%);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap;color:var(--green);opacity:0;transition:opacity .2s;pointer-events:none;font-weight:600}
+.side-nav a:hover::before{opacity:1}
+
+/* ── SECTIONS ── */
+section{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:100px 70px 80px;position:relative}
+.section-content{max-width:1100px;width:100%}
+.section-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--green);margin-bottom:16px;font-weight:600}
+.section-title{font-size:clamp(38px,6vw,72px);font-weight:900;letter-spacing:-3px;line-height:1;margin-bottom:16px;color:#fff}
+.section-title span{color:var(--green)}
+.section-desc{font-size:15px;line-height:1.85;max-width:520px;color:var(--muted);margin-bottom:56px;font-weight:300}
+.divider{width:40px;height:2px;background:var(--green);border-radius:2px;margin-bottom:40px}
+
+/* ── BUTTONS ── */
+.btn-primary{background:var(--green);color:#0a0a0a;padding:14px 34px;border-radius:4px;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;text-decoration:none;border:none;cursor:pointer;transition:all .3s;display:inline-block}
+.btn-primary:hover{background:var(--green-dim);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:#fff;padding:14px 34px;border-radius:4px;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:600;text-decoration:none;border:1.5px solid rgba(255,255,255,0.2);transition:all .3s;display:inline-block}
+.btn-ghost:hover{border-color:var(--green);color:var(--green)}
+.btn-back{background:none;border:none;cursor:pointer;color:var(--muted);font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:600;font-family:'Poppins',sans-serif;display:inline-flex;align-items:center;gap:8px;transition:color .3s;padding:0;margin-bottom:48px}
+.btn-back:hover{color:var(--green)}
+
+/* ── HERO ── */
+#home{text-align:center;background:radial-gradient(ellipse 80% 55% at 50% 40%,rgba(0,200,150,0.11) 0%,transparent 70%),var(--bg)}
+.hero-name{font-size:clamp(48px,10vw,130px);font-weight:900;letter-spacing:-4px;line-height:1;color:#fff;margin-bottom:14px}
+.hero-name span{color:var(--green)}
+.hero-role{font-size:clamp(10px,1.4vw,16px);letter-spacing:4px;text-transform:uppercase;color:var(--muted);margin-bottom:32px;font-weight:400}
+.hero-desc{font-size:17px;line-height:1.9;color:var(--muted);max-width:500px;margin:0 auto 48px;font-weight:300}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* ── ABOUT ── */
+#about{background:var(--bg2)}
+.about-heading{font-size:clamp(28px,4vw,52px);font-weight:800;letter-spacing:-2px;line-height:1.1;color:#fff;margin-bottom:20px}
+.about-heading span{color:var(--green)}
+.about-p{font-size:15px;line-height:1.9;color:var(--muted);margin-bottom:14px;font-weight:300;max-width:680px}
+.skills-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--green);margin:36px 0 20px;font-weight:600}
+.skills-focus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:820px}
+.sfc{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:24px 20px;transition:all .3s}
+.sfc:hover{border-color:rgba(0,200,150,0.35);box-shadow:0 0 28px var(--green-glow)}
+.sfc-icon{font-size:20px;color:var(--green);margin-bottom:14px}
+.sfc-title{font-size:13px;font-weight:700;color:#fff;margin-bottom:12px;line-height:1.3}
+.sfc-list{list-style:none;padding:0}
+.sfc-list li{font-size:12px;color:var(--muted);line-height:1.8;padding-left:14px;position:relative;font-weight:300}
+.sfc-list li::before{content:'—';position:absolute;left:0;color:var(--green);font-size:10px}
+
+/* ── PROJECTS (single section, swaps content inside) ── */
+#projects{background:var(--bg)}
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.cat-card{background:var(--bg3);border:1px solid var(--border);border-radius:14px;padding:40px 32px;cursor:pointer;transition:all .4s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;justify-content:space-between;min-height:300px;position:relative;overflow:hidden}
+.cat-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--green-glow2),transparent 60%);opacity:0;transition:opacity .4s;pointer-events:none}
+.cat-card:hover{transform:translateY(-8px);border-color:rgba(0,200,150,0.4);box-shadow:0 28px 60px rgba(0,0,0,0.5),0 0 0 1px rgba(0,200,150,0.15)}
+.cat-card:hover::before{opacity:1}
+.cat-card-num{font-size:11px;letter-spacing:3px;color:var(--muted2);font-weight:600;margin-bottom:24px}
+.cat-card-icon{font-size:32px;color:var(--green);margin-bottom:16px;display:block}
+.cat-card-title{font-size:20px;font-weight:800;color:#fff;letter-spacing:-0.5px;line-height:1.2;margin-bottom:10px}
+.cat-card-desc{font-size:13px;color:var(--muted);line-height:1.7;font-weight:300;margin-bottom:20px;flex:1}
+.cat-keywords{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:24px}
+.cat-kw{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--green);background:var(--green-glow2);border:1px solid rgba(0,200,150,0.18);border-radius:3px;padding:4px 10px;font-weight:600}
+.cat-cta{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--green);font-weight:700;display:inline-flex;align-items:center;gap:8px;transition:gap .3s}
+.cat-card:hover .cat-cta{gap:14px}
+
+/* ── DETAIL PANE ── */
+.detail-header{margin-bottom:52px}
+.detail-cat-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--green);margin-bottom:14px;font-weight:600}
+.detail-title{font-size:clamp(32px,5vw,64px);font-weight:900;letter-spacing:-2px;color:#fff;line-height:1;margin-bottom:12px}
+.detail-title span{color:var(--green)}
+.detail-desc{font-size:15px;color:var(--muted);font-weight:300;line-height:1.7;max-width:500px}
+
+/* ── PROJECT GRID & CARDS ── */
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start}
+.proj-card{background:var(--bg3);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:all .4s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column}
+.proj-card:hover{transform:translateY(-7px);border-color:rgba(0,200,150,0.35);box-shadow:0 24px 56px rgba(0,0,0,0.5),0 0 0 1px rgba(0,200,150,0.12)}
+
+/* ── IMAGE FIX ── */
+.proj-img-wrap{width:100%;aspect-ratio:16/9;overflow:hidden;background:var(--bg2);flex-shrink:0}
+.proj-img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .4s}
+.proj-card:hover .proj-img{transform:scale(1.04)}
+
+.proj-body{padding:22px;flex:1;display:flex;flex-direction:column}
+.proj-cat-tag{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:9px;font-weight:600}
+.proj-title{font-size:15px;font-weight:700;color:#fff;margin-bottom:9px;line-height:1.4}
+.proj-desc{font-size:12px;line-height:1.75;color:var(--muted);flex:1;font-weight:300;margin-bottom:16px}
+.proj-link{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--green);text-decoration:none;font-weight:600;display:inline-flex;align-items:center;gap:7px;transition:gap .3s;margin-top:auto}
+.proj-link:hover{gap:13px}
+
+/* ── CONTACT ── */
+#contact{background:radial-gradient(ellipse 70% 50% at 50% 80%,rgba(0,200,150,0.10) 0%,transparent 70%),var(--bg2);text-align:center}
+.contact-big{font-size:clamp(36px,8vw,100px);font-weight:900;letter-spacing:-3px;color:#fff;line-height:1;margin-bottom:18px}
+.contact-big span{color:var(--green)}
+.contact-sub{font-size:16px;color:var(--muted);max-width:460px;margin:0 auto 40px;line-height:1.8;font-weight:300}
+.contact-row{display:flex;gap:36px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+.contact-lnk{font-size:11px;letter-spacing:2px;text-transform:none;color:var(--muted);text-decoration:none;font-weight:600;display:flex;align-items:center;gap:8px;transition:color .3s}
+.contact-lnk:hover{color:var(--green)}
+
+footer{text-align:center;padding:36px 20px;border-top:1px solid var(--border);color:var(--muted);font-size:12px}
+footer span{color:var(--green)}
+
+/* ══════════════ RESPONSIVE ══════════════ */
+@media(max-width:1024px){
+  section{padding:90px 40px 70px}
+  .skills-focus-grid{grid-template-columns:1fr 1fr}
+  .cat-grid{grid-template-columns:1fr 1fr;gap:16px}
+  .proj-grid{grid-template-columns:1fr 1fr;gap:16px}
+  .side-nav{right:16px}
+}
+@media(max-width:768px){
+  .side-nav{display:none}
+  section{padding:80px 24px 60px}
+  .skills-focus-grid{grid-template-columns:1fr}
+  .cat-grid{grid-template-columns:1fr;gap:14px}
+  .cat-card{min-height:auto;padding:28px 24px}
+  .proj-grid{grid-template-columns:1fr}
+  .hero-btns{flex-direction:column;align-items:center}
+  .contact-row{flex-direction:column;align-items:center;gap:20px}
+}
+@media(max-width:480px){
+  section{padding:80px 18px 48px}
+  .hero-name{letter-spacing:-2px}
+  .hero-role{letter-spacing:2px;font-size:9px}
+  .cat-card{padding:22px 18px}
+  .proj-body{padding:16px}
+  .proj-img-wrap{aspect-ratio:4/3}
+}
+</style>
 </head>
 <body>
 
-    <nav>
-        <div class="nav-left">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#writing">Writing</a>
-            <a href="#webdesign">Web Design</a>
-            <a href="#instructional">Instructional Design</a>
-        </div>
-        <div class="nav-right">
-            <a href="#contact">Contact</a>
-        </div>
-        <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
+<!-- ── SIDE NAV ── -->
+<nav class="side-nav" id="sideNav">
+  <a href="#home"     data-label="Home"></a>
+  <a href="#about"    data-label="About"></a>
+  <a href="#projects" data-label="Projects"></a>
+  <a href="#contact"  data-label="Contact"></a>
+</nav>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#writing">Writing</a>
-        <a href="#webdesign">Web Design</a>
-        <a href="#instructional">Instructional Design</a>
-        <a href="#contact">Contact</a>
+<!-- ══════════════ HOME ══════════════ -->
+<section id="home">
+  <div class="section-content" style="text-align:center">
+    <h1 class="hero-name">PUMLA<br><span>NOFEMELE</span></h1>
+    <p class="hero-role">Cybersecurity & Digital Safety · Web Design · Research & Content Design</p>
+    <p class="hero-desc">Social impact through research and digital work</p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-primary">View Work</a>
+      <a href="#contact"  class="btn-ghost">Get in Touch</a>
     </div>
-
-    <!-- Overlay -->
-    <div class="overlay" id="overlay"></div>
-
-    <section id="home">
-        <div class="section-content">
-            <h1 class="hero-title">PORTFOLIO</h1>
-            <p class="hero-subtitle">Pumla Nofemele</p>
-        </div>
-    </section>
-
-    <section id="about">
-        <div class="section-content">
-            <div class="about-container">
-                <div class="about-image">
-                    <img src="images/Capture.webp" alt="Dr. Pumla Nofemele">
-                </div>
-                <div class="about-text">
-                    <div class="section-label">MY BIO</div>
-                    <h2 class="about-title">About Me</h2>
-                    <p class="about-description">
-                       This is my portfolio of writing, web design and instructional design; where research, teaching, social impact storytelling, and creativity intersect. For my full professional background, you can visit my LinkedIn. 
-                    </p>
-
-                    <div class="skills-container">
-                        <h3 class="skills-title">Skills</h3>
-                        <div class="skills-grid">
-                            <div class="skill-block">Content Writing</div>
-                            <div class="skill-block">Research</div>
-                            <div class="skill-block">Social Media</div>
-                            <div class="skill-block">Blogging</div>
-                            <div class="skill-block">Podcasting & Facilitation</div>
-                            <div class="skill-block">Web Design (HTML, CSS & JavaScript)</div>
-                            <div class="skill-block">User Experience (UX) Research</div>
-                            <div class="skill-block">Learning Material Development</div>
-                            <div class="skill-block">E-Learning Development (LMS Familiarity)</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="writing">
-        <div class="section-content">
-            <div class="section-label"><i class="fas fa-pen-fancy"></i> 01 — Writing</div>
-            <h2 class="section-title">Words That Move</h2>
-            <div class="section-description">
-                <p>Research, storytelling, news headlines that are unbiased, thought provoking captions and moving people to action.</p>
-            </div>
-            <div class="work-gallery">
-                <div class="work-item">
-                    <a href="https://www.instagram.com/p/DCPQ4Clt3YO/">
-                        <img src="images/mental.webp" alt="Article" class="work-item-image">
-                        <div class="work-item-content">
-                            <h3 class="work-item-title">Awareness Campaign Poster</h3>
-                            <p class="work-item-description">💫Real strength starts with self-care, let's make men's health a priority this month and beyond!
-                                💫Let's reshape traditional stereotypes like those that encourage silence, and promote harmful 'real men' narratives. Let's Go!!
-                                ❤️👌🏽⋆⁺₊⋆ ☀︎ ⋆⁺₊⋆</p>
-                            <span class="work-item-link">Read Full Story</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="work-item">
-                    <a href="https://wp.me/pcOCA7-gR">
-                        <img src="images/vaw1.webp" alt="Blog Post" class="work-item-image">
-                        <div class="work-item-content">
-                            <h3 class="work-item-title">Awareness Campaign Poster</h3>
-                            <p class="work-item-description">The 16 Days of Activism is an annual global campaign that begins on 25 November, marking the International Day for the Elimination of Violence against Women, and runs until 10 December; International Human Rights Day.</p>
-                            <span class="work-item-link">Read Full Story</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="work-item">
-                    <a href="https://reflectivelivinghub.wordpress.com/2024/05/20/what-is-my-contemporary-reflection-on-the-son-of-man-painting-by-surrealist-rene-magritte/">
-                        <img src="images/son2.webp" alt="Content" class="work-item-image">
-                        <div class="work-item-content">
-                            <h3 class="work-item-title">Social Analysis</h3>
-                            <p class="work-item-description">Reflection on 'Son of Man' by René Magritte. Art is always open to interpretation. This piece is profound, mystifying, and obscure, all hallmark features of Surrealism. Belgian Surrealist painter René Magritte painted 'Son of Man' as a self-portrait...</p>
-                            <span class="work-item-link">Read Full Story</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="work-item">
-                    <a href="https://reflectivelivinghub.wordpress.com/2025/03/10/does-the-clean-girl-aesthetic-have-a-hidden-bias/">
-                        <img src="images/cleanggirl1.webp" alt="Copy" class="work-item-image">
-                        <div class="work-item-content">
-                            <h3 class="work-item-title">Trend Commentary</h3>
-                            <p class="work-item-description">Does the Clean Girl Aesthetic Have a Hidden Bias? The clean girl aesthetic is everywhere. It's all about minimalism; slick buns, tiny hoop earrings, natural makeup, naked manicures, and neutral, well-fitted outfits. But is there more to this trend?</p>
-                            <span class="work-item-link">Read Full Story</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="work-item">
-                    <a href="https://wp.me/pcOCA7-jW">
-                        <img src="images/moodfits.webp" alt="Editorial" class="work-item-image">
-                        <div class="work-item-content">
-                            <h3 class="work-item-title"> Social Research</h3>
-                            <p class="work-item-description">Gen Z Wardrobes: The Mood of Gender Free Fits. Genderless fashion provides alternatives for self-expression; not just for individuals who identify outside of the gender binary, but also for those who want to showcase their personality beyond gender.</p>
-                            <span class="work-item-link">Read Full Story</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="work-item">
-                    <a href="https://socialmoodlabel.wordpress.com/newsletters/">
-                        <img src="images/newsletter1.webp" alt="Editorial" class="work-item-image">
-                        <div class="work-item-content">
-                            <h3 class="work-item-title">Newsletters</h3>
-                            <p class="work-item-description">Newsletter creation is so satisfying. Consolidating all the events, activities and special moments allow me to combine storytelling with creativity.</p>
-                            <span class="work-item-link">Read Full Story</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="work-item">
-                    <a href="https://www.instagram.com/p/DIJdm56tc_J/?img_index=1">
-                        <img src="images/space3.webp" alt="Article 7" class="work-item-image">
-                        <div class="work-item-content">
-                            <h3 class="work-item-title">Creative Content Writing & Social Posts</h3>
-                            <p class="work-item-description"> 😁⚽️🏀MOOD 44. PRESS PLAY ON FUN: WHERE DID OUR HOBBIES GO? This month, we focus on reigniting our hobbies & figuring out where they disappeared to.
-                                The world is obsessed with hustle, social media, and material success, which has resulted in our hobbies quietly disappearing. Remember spraypainting...</p>
-                            <span class="work-item-link">Read Full Story</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="work-item">
-                    <a href="https://www.instagram.com/p/DJjKPRDMDTp/">
-                        <img src="images/pinky.webp" alt="Article 8" class="work-item-image">
-                        <div class="work-item-content">
-                            <h3 class="work-item-title">Creative Content Writing & Social Posts</h3>
-                            <p class="work-item-description">CHAPTER 2: UNEASY ENCOUNTERS WITH THE FEMININE SHELF 🛒🌟💪🏿
-                                Most men become uncomfortable around feminine products in the grocery store. They start looking around and acting sus 🤨. I want to say relax yourself, Do you think you are being watched? Judged? Do you think your masculinity......</p>
-                            <span class="work-item-link">Read Full Story</span>
-                        </div>
-                    </a>
-                </div>
-                <div class="work-item">
-                    <a href="https://www.tiktok.com/@gazilliongoals">
-                        <img src="images/mamelodi.webp" alt="Article" class="work-item-image">
-                        <div class="work-item-content">
-                            <h3 class="work-item-title">Creative Content Writing & Social Posts</h3>
-                            <p class="work-item-description">Congratulations to Mamelodi Sundowns! On Wednesday evening, Sundowns were officially crowned Betway Premiership champions after a commanding 3-0 victory over Chippa United in East London. This historic win marks their eighth consecutive league title...</p>
-                            <span class="work-item-link">Read Full Story</span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-   <section id="webdesign">
-    <div class="section-content">
-        <div class="section-label"><i class="fas fa-laptop-code"></i> 02 — Web Design</div>
-        <h2 class="section-title">Digital Projects</h2>
-        <div class="section-description">
-            <p>Combining website design with UX research; shaping digital experiences informed by real user needs.</p>
-        </div>
-        <div class="work-gallery">
-             <div class="work-item">
-                <a href="https://gazillion-goals.netlify.app/" target="_blank" style="text-decoration: none; color: inherit;">
-                    <img src="images/footy1.webp" alt="Football" class="work-item-image">
-                    <div class="work-item-content">
-                        <h3 class="work-item-title">Featured Project: Gazillion Goals Football Website</h3>
-                    </div>
-                </a>
-            </div>
-            <div class="work-item">
-                <a href="https://royalrabbitsecd.netlify.app/" target="_blank" style="text-decoration: none; color: inherit;">
-                    <img src="images/rabbitsattack.webp" alt="Community" class="work-item-image">
-                    <div class="work-item-content">
-                        <h3 class="work-item-title">Featured Project: ECD Website<h3>
-                    </div>
-                </a>
-            </div>
-            <div class="work-item">
-                <a href="https://socialmoodlabel.netlify.app/" target="_blank" style="text-decoration: none; color: inherit;">
-                    <img src="images/sml400.webp" alt="Research" class="work-item-image">
-                    <div class="work-item-content">
-                        <h3 class="work-item-title">Featured Project: Social Research Website Landing Page</h3>
-                    </div>
-                </a>
-            </div>
-
-           <div class="work-item">
-                <a href="https://lumkaportfolio.netlify.app/" target="_blank" style="text-decoration: none; color: inherit;">
-                    <img src="images/LUMKI3-Copy.webp" alt="Portfolio" class="work-item-image">
-                    <div class="work-item-content">
-                        <h3 class="work-item-title">Featured Project: Portfolio of Evidence</h3>
-                    </div>
-                </a>
-            </div>
-            
-            <div class="work-item">
-                    <img src="images/newuserpersona.webp" alt="Project 5" class="work-item-image">
-                    <div class="work-item-content">
-                        <h3 class="work-item-title">UX Research Artifact: User Persona</h3>
-                    </div>
-            </div>
-
-            <div class="work-item">
-                    <img src="images/userjourneymap.webp" alt="Project 6" class="work-item-image">
-                    <div class="work-item-content">
-                        <h3 class="work-item-title">UX Research Artifact: User Journey Map</h3>
-                    </div>
-            </div>
-
-            <div class="work-item">
-                    <img src="images/empathy map.webp" alt="Project 7" class="work-item-image">
-                    <div class="work-item-content">
-                        <h3 class="work-item-title">UX Research Artifact: Empathy Map</h3>
-                    </div>
-            </div>
-
-            <div class="work-item">
-                    <img src="images/USERFLOW.webp" alt="Project 8" class="work-item-image">
-                    <div class="work-item-content">
-                        <h3 class="work-item-title">UX Research Artifact: User Flow</h3>
-                    </div>
-            </div>
-        </div>
-    </div>
+  </div>
 </section>
 
-    <section id="instructional">
-        <div class="section-content">
-            <div class="section-label"><i class="fas fa-lightbulb"></i> 03 — Instructional Design</div>
-            <h2 class="section-title">E-Learning Materials and Designs</h2>
-            <div class="section-description">
-                <p>Designing learning experiences that transform knowledge into action. Through careful analysis, creative problem-solving, and user-centered design, I create educational solutions that engage learners and achieve measurable results.</p>
+<!-- ══════════════ ABOUT ══════════════ -->
+<section id="about">
+  <div class="section-content">
+    <div class="section-label">About</div>
+    <h2 class="about-heading">Programmes. Practice. Impact</h2>
+    <div class="divider"></div>
+    <p class="about-p">I am a human-centred practitioner working at the intersection of people and purpose; supporting youth development, gender-based violence, recreation and wellbeing, with experience in NGO operations and strategic planning.</p>
+    <p class="about-p">I design programmes, workshops, and learning experiences that are practical, inclusive, and built around the real needs of the people they serve.</p>
+    <p class="about-p">Alongside this, I use digital tools to support communication and awareness, including designing clean, user-focused websites.</p>
+    <p class="about-p">Want to know more about my journey? Head over to my LinkedIn.</p>
+    <div class="skills-label">Skills &amp; Focus</div>
+    <div class="skills-focus-grid">
+      <div class="sfc">
+        <div class="sfc-icon"><i class="fas fa-shield-halved"></i></div>
+        <h4 class="sfc-title">Cybersecurity &amp; Digital Safety</h4>
+        <ul class="sfc-list">
+          <li>Awareness and training</li>
+          <li>Privacy and data protection</li>
+          <li>Digital risk and exposure</li>
+        </ul>
+      </div>
+      <div class="sfc">
+        <div class="sfc-icon"><i class="fas fa-code"></i></div>
+        <h4 class="sfc-title">Web Design</h4>
+        <ul class="sfc-list">
+          <li>NGO and social service websites</li>
+          <li>Brand and marketing websites</li>
+          <li>Sports and media platforms</li>
+        </ul>
+      </div>
+      <div class="sfc">
+        <div class="sfc-icon"><i class="fas fa-pen-nib"></i></div>
+        <h4 class="sfc-title">Research &amp; Content Design</h4>
+        <ul class="sfc-list">
+          <li>Research</li>
+          <li>Social and cultural analysis</li>
+          <li>Content and digital learning design</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ PROJECTS (ONE section — content swaps inside) ══════════════ -->
+<section id="projects">
+  <div class="section-content">
+
+    <!-- Category intro + grid (shown by default) -->
+    <div id="proj-intro">
+      <div class="section-label">Selected Work</div>
+      <h2 class="section-title">Projects</h2>
+      <p class="section-desc">Choose an area of work to explore a curated selection of projects.</p>
+    </div>
+
+    <div id="cat-grid-wrap">
+      <div class="cat-grid">
+
+        <div class="cat-card" onclick="openDetail('cyber')">
+          <div>
+            <div class="cat-card-num">01</div>
+            <i class="fas fa-shield-halved cat-card-icon"></i>
+            <h3 class="cat-card-title">Digital Safety</h3>
+            <p class="cat-card-desc">Awareness campaigns and digital safety initiatives designed to protect and inform.</p>
+            <div class="cat-keywords">
+              <span class="cat-kw">Awareness</span>
+              <span class="cat-kw">POPIA</span>
+              <span class="cat-kw">Safety</span>
             </div>
-            <div class="work-gallery">
-                <div class="work-item">
-                    <img src="images/STORYYYY.webp" alt="Storyboard" class="work-item-image">
-                    <div class="work-item-content">
-                        <h3 class="work-item-title">eLearning Storyboard</h3>
-                        <p class="work-item-description">I designed this storyboard for my module in Talent LMS to serve as a clear blueprint for the learning experience. It outlines the content plan, ensures a logical flow, and acts as an effective communication tool for seamless learning design.</p>
-                    </div>
-                </div>
-                <div class="work-item">
-                    <img src="images/REALOBJECTIVE.webp" alt="Objectives" class="work-item-image">
-                    <div class="work-item-content">
-                        <h3 class="work-item-title">Learning Objectives</h3>
-                        <p class="work-item-description">To write the above learning objectives I employed Bloom's Taxonomy. This framework provides strong guide for writing clear, measurable learning objectives.</p>
-                    </div>
-                </div>
-                <div class="work-item">
-                    <img src="images/look.webp" alt="Authoring" class="work-item-image">
-                    <div class="work-item-content">
-                        <h3 class="work-item-title">Authoring Tools</h3>
-                        <p class="work-item-description">In the above example I created a drag and drop exercise using Lumi, an H5P authoring tool. Tools like Lumi help in developing engaging, memorable, hands on, interactive content.</p>
-                    </div>
-                </div>
-                <div class="work-item">
-                    <img src="images/finallms (1).webp" alt="Assessment" class="work-item-image">
-                    <div class="work-item-content">
-                        <h3 class="work-item-title">Assessment on an LMS</h3>
-                        <p class="work-item-description">In this example I have created an assessments quiz on Moodle Cloud. Quizzes provide immediate feedback to learners, helping them identify gaps in understanding while the material is still fresh.</p>
-                    </div>
-                </div>
-                <div class="work-item">
-                    <img src="images/idnownowNOW.webp" alt="Assessment" class="work-item-image">
-                    <div class="work-item-content">
-                        <h3 class="work-item-title">Powerpoint Presentations</h3>
-                        <p class="work-item-description">Here is an example of a Powerpoint Presentation I created. This slide demonstrates my ability to design clear, visually engaging instructional content that supports learner understanding.</p>
-                    </div>
-                </div>
+          </div>
+          <span class="cat-cta">View Projects <i class="fas fa-arrow-right" style="font-size:10px"></i></span>
+        </div>
+
+        <div class="cat-card" onclick="openDetail('web')">
+          <div>
+            <div class="cat-card-num">02</div>
+            <i class="fas fa-code cat-card-icon"></i>
+            <h3 class="cat-card-title">Web Design</h3>
+            <p class="cat-card-desc">Responsive, accessible websites, bold aesthetics grounded in real user needs.</p>
+            <div class="cat-keywords">
+              <span class="cat-kw">HTML, CSS & JS</span>
+              <span class="cat-kw">Responsive</span>
+              <span class="cat-kw">Accessible</span>
             </div>
+          </div>
+          <span class="cat-cta">View Projects <i class="fas fa-arrow-right" style="font-size:10px"></i></span>
         </div>
-    </section>
 
-   <section id="contact">
-        <div class="section-content">
-            <div class="section-label"><i class="fas fa-envelope"></i> 04 — Contact</div>
-            <h2 class="section-title">Like the Look?</h2>
-            <div class="contact-info">
-                <p>Get in Touch</p>
-                <p><a href="mailto:pumlawebofwork@gmail.com"><i class="fas fa-envelope"></i> pumlawebofwork@gmail.com</a></p>
-                <p><a href="https://www.linkedin.com/in/nofemelepumla/" target="_blank"><i class="fab fa-linkedin"></i> Connect on LinkedIn</a></p>
-         </div>
+        <div class="cat-card" onclick="openDetail('pub')">
+          <div>
+            <div class="cat-card-num">03</div>
+            <i class="fas fa-pen-nib cat-card-icon"></i>
+            <h3 class="cat-card-title">Research & Content Design</h3>
+            <p class="cat-card-desc">Research, critical analysis and applied content design exploring social issues and translating ideas into accessible formats.</p>
+            <div class="cat-keywords">
+              <span class="cat-kw">Research</span>
+              <span class="cat-kw">Analysis</span>
+              <span class="cat-kw">Content and digital learning design</span>
+            </div>
+          </div>
+          <span class="cat-cta">View Projects <i class="fas fa-arrow-right" style="font-size:10px"></i></span>
         </div>
-    </section>
 
-    <footer>
-        <div class="footer-message">Love It ✨</div>
-        &copy; Pumla P N. 2025 All rights reserved.
-    </footer>
+      </div>
+    </div><!-- /cat-grid-wrap -->
 
-    <script>
-    // Hamburger menu functionality
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const overlay = document.getElementById('overlay');
-    const mobileLinks = mobileMenu.querySelectorAll('a');
+    <!-- Detail panes (hidden until a card is clicked) -->
+    <div id="proj-detail-inner" style="display:none">
 
-    function toggleMenu() {
-        hamburger.classList.toggle('active');
-        mobileMenu.classList.toggle('active');
-        overlay.classList.toggle('active');
-        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+      <button class="btn-back" onclick="closeDetail()">
+        <i class="fas fa-arrow-left" style="font-size:10px"></i> Back to Projects
+      </button>
+
+      <!-- CYBER -->
+      <div id="detail-cyber" class="detail-pane" style="display:none">
+        <div class="detail-header">
+          <div class="detail-cat-label"><i class="fas fa-shield-halved"></i> &nbsp;Cybersecurity &amp; Digital Safety</div>
+          <h2 class="detail-title">Selected <span>Work</span></h2>
+          <p class="detail-desc">Awareness campaigns, privacy education, and digital safety initiatives designed to protect and inform.</p>
+        </div>
+        <div class="proj-grid">
+          <div class="proj-card">
+            <div class="proj-img-wrap">
+              <img src="images/8.webp" class="proj-img" alt="Awareness and Training" loading="lazy">
+            </div>
+            <div class="proj-body">
+              <div class="proj-cat-tag">Project 1</div>
+              <h3 class="proj-title">Awareness and Training</h3>
+              <p class="proj-desc">A practical awareness and training preview on social engineering and deepfakes, helping individuals recognise and respond to real world scams.</p>
+              <a href="https://drive.google.com/file/d/1NkV69QRJdhYPz41yVa9KRECMBdj3saAp/view?usp=sharing" target="_blank" class="proj-link">View Project <i class="fas fa-arrow-right" style="font-size:10px"></i></a>
+            </div>
+          </div>
+          <div class="proj-card">
+            <div class="proj-img-wrap">
+              <img src="images/PU2.webp" class="proj-img" alt="Privacy and Data Protection" loading="lazy">
+            </div>
+            <div class="proj-body">
+              <div class="proj-cat-tag">Project 2</div>
+              <h3 class="proj-title">Privacy and Data Protection</h3>
+              <p class="proj-desc">A practical approach to protecting sensitive information and improving everyday data handling in organisational settings.</p>
+              <a href="https://drive.google.com/file/d/1EKx-3xjxHn0EtJWedu3Y67M7agI7S76q/view?usp=sharing" target="_blank" class="proj-link">View Project <i class="fas fa-arrow-right" style="font-size:10px"></i></a>
+            </div>
+          </div>
+          <div class="proj-card">
+            <div class="proj-img-wrap">
+              <img src="images/osintnewimage.webp" class="proj-img" alt="Digital Risk and Exposure" loading="lazy">
+            </div>
+            <div class="proj-body">
+              <div class="proj-cat-tag">Project 3</div>
+              <h3 class="proj-title">Digital Risk and Exposure (OSINT)</h3>
+              <p class="proj-desc">An OSINT website that demonstrates how everyday online information can be used to profile and target individuals, exposing digital risks.</p>
+              <a href="https://osintcasestudyproject.netlify.app/" target="_blank" class="proj-link">View Project <i class="fas fa-arrow-right" style="font-size:10px"></i></a>
+            </div>
+          </div>
+        </div>
+      </div><!-- /detail-cyber -->
+
+      <!-- WEB -->
+      <div id="detail-web" class="detail-pane" style="display:none">
+        <div class="detail-header">
+          <div class="detail-cat-label"><i class="fas fa-code"></i> &nbsp;Web Design</div>
+          <h2 class="detail-title">Selected <span>Work</span></h2>
+          <p class="detail-desc">Responsive, accessible websites built from scratch; bold aesthetics grounded in real user needs.</p>
+        </div>
+        <div class="proj-grid">
+          <div class="proj-card">
+            <div class="proj-img-wrap">
+              <img src="images/4.webp" class="proj-img" alt="Royal Rabbits ECD Website" loading="lazy">
+            </div>
+            <div class="proj-body">
+              <div class="proj-cat-tag">Project 1</div>
+              <h3 class="proj-title">Royal Rabbits ECD Website</h3>
+              <p class="proj-desc">A clear, accessible, and welcoming website for an Early Childhood Development centre.</p>
+              <a href="https://royalrabbitsecd.netlify.app/" target="_blank" class="proj-link">View Project <i class="fas fa-arrow-right" style="font-size:10px"></i></a>
+            </div>
+          </div>
+          <div class="proj-card">
+            <div class="proj-img-wrap">
+              <img src="images/6.webp" class="proj-img" alt="Marketing and Brand Portfolio" loading="lazy">
+            </div>
+            <div class="proj-body">
+              <div class="proj-cat-tag">Project 2</div>
+              <h3 class="proj-title">Marketing and Brand Portfolio</h3>
+              <p class="proj-desc">A collection of brand strategy, campaign execution, and event work delivered for a range of clients.</p>
+              <a href="https://lumkaportfolio.netlify.app/" target="_blank" class="proj-link">View Project <i class="fas fa-arrow-right" style="font-size:10px"></i></a>
+            </div>
+          </div>
+          <div class="proj-card">
+            <div class="proj-img-wrap">
+              <img src="images/gazillion goals where goals meet stories.webp" class="proj-img" alt="Gazillion Goals Football Website" loading="lazy">
+            </div>
+            <div class="proj-body">
+              <div class="proj-cat-tag">Project 3</div>
+              <h3 class="proj-title">Gazillion Goals Football Website</h3>
+              <p class="proj-desc">A dynamic football website, featuring bold design and an immersive fan experience.</p>
+              <a href="https://gazillion-goals.netlify.app/" target="_blank" class="proj-link">View Project <i class="fas fa-arrow-right" style="font-size:10px"></i></a>
+            </div>
+          </div>
+        </div>
+      </div><!-- /detail-web -->
+
+      <!-- PUB -->
+      <div id="detail-pub" class="detail-pane" style="display:none">
+        <div class="detail-header">
+          <div class="detail-cat-label"><i class="fas fa-pen-nib"></i> &nbsp;Research and Content Design</div>
+          <h2 class="detail-title">Selected <span>Work</span></h2>
+          <p class="detail-desc">Research, Analysis & Content Design.</p>
+        </div>
+        <div class="proj-grid">
+          <div class="proj-card">
+            <div class="proj-img-wrap">
+              <img src="images/5.webp" class="proj-img" alt="Leisure Safety and Gendered Belonging" loading="lazy">
+            </div>
+            <div class="proj-body">
+              <div class="proj-cat-tag">Project 1</div>
+              <h3 class="proj-title">Research Article: Leisure, Safety & Gendered Belonging in Public Spaces</h3>
+              <p class="proj-desc">Examining the intersection of gender, safety, and belonging, and how unequal access to safe spaces reshapes the meaning of leisure for women.</p>
+              <a href="https://wp.me/pcOCA7-kk" target="_blank" class="proj-link">Read Article <i class="fas fa-arrow-right" style="font-size:10px"></i></a>
+            </div>
+          </div>
+          <div class="proj-card">
+            <div class="proj-img-wrap">
+              <img src="images/1.webp" class="proj-img" alt="Clean Girl Aesthetic Analysis" loading="lazy">
+            </div>
+            <div class="proj-body">
+              <div class="proj-cat-tag">Project 2</div>
+              <h3 class="proj-title">Analysis: Does The Clean Girl Aesthetic Have a Hidden Bias?</h3>
+              <p class="proj-desc">An analysis of the "clean girl" aesthetic examining its ideals of simplicity, and its underlying cultural and racial biases.</p>
+              <a href="https://reflectivelivinghub.wordpress.com/2025/03/10/does-the-clean-girl-aesthetic-have-a-hidden-bias/" target="_blank" class="proj-link">Read Article <i class="fas fa-arrow-right" style="font-size:10px"></i></a>
+            </div>
+          </div>
+          <div class="proj-card">
+            <div class="proj-img-wrap">
+              <img src="images/NEWIMAGEEEE.webp" class="proj-img" alt="Applied content and learning design portfolio preview" loading="lazy">
+            </div>
+            <div class="proj-body">
+              <div class="proj-cat-tag">Project 3</div>
+              <h3 class="proj-title">Content & Learning Design</h3>
+              <p class="proj-desc">Clear, engaging content design across slide decks, social media, and online courses. For real people, in formats that actually work.</p>
+              <a href="https://drive.google.com/file/d/1MFeiil2nUdpC0f6cTheFlRFJPHiMsjWr/view?usp=sharing" target="_blank" class="proj-link">Preview Work <i class="fas fa-arrow-right" style="font-size:10px"></i></a>
+            </div>
+          </div>
+        </div>
+      </div><!-- /detail-pub -->
+
+    </div><!-- /proj-detail-inner -->
+
+  </div><!-- /section-content -->
+</section>
+
+<!-- ══════════════ CONTACT ══════════════ -->
+<section id="contact">
+  <div class="section-content" style="text-align:center">
+    <div class="section-label"><i class="fas fa-envelope"></i> &nbsp;Let's Connect</div>
+    <h2 class="contact-big">Got an<br><span>idea?</span></h2>
+    <p class="contact-sub">I'm open to new projects, collaborations, and conversations. Let's create something extraordinary.</p>
+    <a href="mailto:pumlawebofwork@gmail.com" class="btn-primary">Say Hello</a>
+    <div class="contact-row">
+      <a href="mailto:pumlawebofwork@gmail.com" class="contact-lnk"><i class="fas fa-envelope"></i> pumlawebofwork@gmail.com</a>
+      <a href="https://www.linkedin.com/in/nofemelepumla/" target="_blank" class="contact-lnk"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p style="font-style:italic;margin-bottom:6px;opacity:.6">Love It ✨</p>
+  <p>&copy; <span>Pumla P N.</span> 2025 All rights reserved.</p>
+</footer>
+
+<script>
+// ── Side nav active state ──
+const allSections = document.querySelectorAll('section');
+const dots = document.querySelectorAll('.side-nav a');
+
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      dots.forEach(d => d.classList.remove('active'));
+      const dot = document.querySelector(`.side-nav a[href="#${e.target.id}"]`);
+      if(dot) dot.classList.add('active');
     }
+  });
+},{threshold:0.3});
+allSections.forEach(s => obs.observe(s));
 
-    hamburger.addEventListener('click', toggleMenu);
-    overlay.addEventListener('click', toggleMenu);
+// ── Smooth scroll ──
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const href = a.getAttribute('href');
+    if(href === '#') return;
+    e.preventDefault();
+    const t = document.querySelector(href);
+    if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+});
 
-    // Close menu when clicking a link
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            toggleMenu();
-        });
-    });
+// ── Open category detail ──
+function openDetail(cat){
+  document.getElementById('proj-intro').style.display     = 'none';
+  document.getElementById('cat-grid-wrap').style.display  = 'none';
+  document.getElementById('proj-detail-inner').style.display = 'block';
+  document.querySelectorAll('.detail-pane').forEach(p => p.style.display = 'none');
+  document.getElementById('detail-' + cat).style.display  = 'block';
+  document.getElementById('projects').scrollIntoView({behavior:'smooth', block:'start'});
+}
 
-    // Smooth scroll for all navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-    </script>
+// ── Back to category grid ──
+function closeDetail(){
+  document.getElementById('proj-detail-inner').style.display = 'none';
+  document.getElementById('proj-intro').style.display     = 'block';
+  document.getElementById('cat-grid-wrap').style.display  = 'block';
+  document.getElementById('projects').scrollIntoView({behavior:'smooth', block:'start'});
+}
+</script>
 </body>
 </html>
