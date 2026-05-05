@@ -26,18 +26,18 @@ Deployed via Netlify
 
 Project Structure
 /
-├── index.html
-├── images/
-│   ├── previewimage.png      # og:image for social previews (1200x630px)
-│   ├── 1.webp
-│   ├── 4.webp
-│   ├── 5.webp
-│   ├── 6.webp
-│   ├── 8.webp
-│   ├── 11.webp
-│   ├── PU2.webp
-│   ├── osintnewimage.webp
-│   └── NEWIMAGEEEE.webp
+index.html
+images/
+previewimage.png      # og:image for social previews (1200x630px)
+1.webp
+4.webp
+5.webp
+6.webp
+8.webp
+11.webp
+PU2.webp
+osintnewimage.webp
+NEWIMAGEEEE.webp
 
 SEO & Discoverability
 
