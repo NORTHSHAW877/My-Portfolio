@@ -11,7 +11,7 @@ Fully responsive across mobile, tablet, and laptop
 SEO optimised with Open Graph and Twitter/X Card meta tags for rich social previews
 
 Sections
-SectionDescriptionHomeHero with name, role, and call-to-action buttonsAboutBackground, bio, and skills overviewProjectsThree categories — Digital Safety, Web Design, Research & Content DesignContactEmail and LinkedIn links
+Section Description Home Hero with name, role, and call-to-action buttons About Background, bio, and skills overview Projects Three categories Digital Safety, Web Design, Research & Content Design Contact Email and LinkedIn links
 
 Tech Stack
 
