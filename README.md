@@ -43,7 +43,7 @@ SEO & Discoverability
 
 Meta description and author tags
 robots: index, follow
-Canonical URL set to https://pumlaportfolio.co.za/
+Canonical URL set to https://pumlaportfolio.netlify.app/
 Open Graph tags for Facebook and LinkedIn
 Twitter/X Card tags (summary_large_image)
 
