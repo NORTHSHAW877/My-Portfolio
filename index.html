@@ -65,7 +65,17 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 /* ── HERO ── */
 #home{text-align:center;background:radial-gradient(ellipse 80% 55% at 50% 40%,rgba(0,200,150,0.11) 0%,transparent 70%),var(--bg)}
 .hero-name{font-size:clamp(48px,10vw,130px);font-weight:900;letter-spacing:-4px;line-height:1;color:#fff;margin-bottom:14px}
-.hero-name span{color:var(--green)}
+
+/* PUMLA = green, NOFEMELE = blue gradient */
+.hero-name .name-first{
+  background:linear-gradient(135deg,#00c896,#00a07a);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero-name .name-last{
+  background:linear-gradient(135deg,#4a9eff,#1a4fa0);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+
 .hero-role{font-size:clamp(10px,1.4vw,16px);letter-spacing:4px;text-transform:uppercase;color:var(--muted);margin-bottom:32px;font-weight:400}
 .hero-desc{font-size:17px;line-height:1.9;color:var(--muted);max-width:500px;margin:0 auto 48px;font-weight:300}
 .hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
@@ -76,29 +86,40 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 .about-heading span{color:var(--green)}
 .about-p{font-size:15px;line-height:1.9;color:var(--muted);margin-bottom:14px;font-weight:300;max-width:680px}
 .skills-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--green);margin:36px 0 20px;font-weight:600}
-.skills-focus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:820px}
-.sfc{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:24px 20px;transition:all .3s}
-.sfc:hover{border-color:rgba(0,200,150,0.35);box-shadow:0 0 28px var(--green-glow)}
-.sfc-icon{font-size:20px;color:var(--green);margin-bottom:14px}
-.sfc-title{font-size:13px;font-weight:700;color:#fff;margin-bottom:12px;line-height:1.3}
-.sfc-list{list-style:none;padding:0}
-.sfc-list li{font-size:12px;color:var(--muted);line-height:1.8;padding-left:14px;position:relative;font-weight:300}
-.sfc-list li::before{content:'—';position:absolute;left:0;color:var(--green);font-size:10px}
 
-/* ── PROJECTS (single section, swaps content inside) ── */
+/* ── SKILLS CARDS (coloured) ── */
+.skills-focus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:820px}
+.sfc{border-radius:16px;padding:28px 22px;transition:all .3s;border:none;position:relative;overflow:hidden}
+.sfc:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,0.4)}
+.sfc-icon{width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:20px;color:#fff;margin-bottom:18px}
+.sfc-title{font-size:14px;font-weight:700;color:#fff;margin-bottom:12px;line-height:1.3}
+.sfc-list{list-style:none;padding:0}
+.sfc-list li{font-size:12px;color:rgba(255,255,255,0.85);line-height:1.8;padding-left:14px;position:relative;font-weight:300}
+.sfc-list li::before{content:'—';position:absolute;left:0;color:rgba(255,255,255,0.6);font-size:10px}
+.sfc:nth-child(1){background:linear-gradient(135deg,#0f7b6c,#00c896)}
+.sfc:nth-child(2){background:linear-gradient(135deg,#1a4fa0,#4a9eff)}
+.sfc:nth-child(3){background:linear-gradient(135deg,#6b3fa0,#c084fc)}
+
+/* ── PROJECTS ── */
 #projects{background:var(--bg)}
+
+/* category cards — each a colour matching skills */
 .cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.cat-card{background:var(--bg3);border:1px solid var(--border);border-radius:14px;padding:40px 32px;cursor:pointer;transition:all .4s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;justify-content:space-between;min-height:300px;position:relative;overflow:hidden}
-.cat-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--green-glow2),transparent 60%);opacity:0;transition:opacity .4s;pointer-events:none}
-.cat-card:hover{transform:translateY(-8px);border-color:rgba(0,200,150,0.4);box-shadow:0 28px 60px rgba(0,0,0,0.5),0 0 0 1px rgba(0,200,150,0.15)}
+.cat-card{border-radius:14px;padding:40px 32px;cursor:pointer;transition:all .4s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;justify-content:space-between;min-height:300px;position:relative;overflow:hidden;border:none}
+.cat-card::before{content:'';position:absolute;inset:0;background:rgba(255,255,255,0.06);opacity:0;transition:opacity .4s;pointer-events:none}
+.cat-card:hover{transform:translateY(-8px);box-shadow:0 28px 60px rgba(0,0,0,0.5)}
 .cat-card:hover::before{opacity:1}
-.cat-card-num{font-size:11px;letter-spacing:3px;color:var(--muted2);font-weight:600;margin-bottom:24px}
-.cat-card-icon{font-size:32px;color:var(--green);margin-bottom:16px;display:block}
+.cat-card:nth-child(1){background:linear-gradient(135deg,#0f7b6c,#00c896)}
+.cat-card:nth-child(2){background:linear-gradient(135deg,#1a4fa0,#4a9eff)}
+.cat-card:nth-child(3){background:linear-gradient(135deg,#6b3fa0,#c084fc)}
+
+.cat-card-num{font-size:11px;letter-spacing:3px;color:rgba(255,255,255,0.5);font-weight:600;margin-bottom:24px}
+.cat-card-icon{font-size:32px;color:rgba(255,255,255,0.9);margin-bottom:16px;display:block}
 .cat-card-title{font-size:20px;font-weight:800;color:#fff;letter-spacing:-0.5px;line-height:1.2;margin-bottom:10px}
-.cat-card-desc{font-size:13px;color:var(--muted);line-height:1.7;font-weight:300;margin-bottom:20px;flex:1}
+.cat-card-desc{font-size:13px;color:rgba(255,255,255,0.8);line-height:1.7;font-weight:300;margin-bottom:20px;flex:1}
 .cat-keywords{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:24px}
-.cat-kw{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--green);background:var(--green-glow2);border:1px solid rgba(0,200,150,0.18);border-radius:3px;padding:4px 10px;font-weight:600}
-.cat-cta{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--green);font-weight:700;display:inline-flex;align-items:center;gap:8px;transition:gap .3s}
+.cat-kw{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#fff;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);border-radius:3px;padding:4px 10px;font-weight:600}
+.cat-cta{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#fff;font-weight:700;display:inline-flex;align-items:center;gap:8px;transition:gap .3s}
 .cat-card:hover .cat-cta{gap:14px}
 
 /* ── DETAIL PANE ── */
@@ -128,7 +149,21 @@ section{min-height:100vh;display:flex;align-items:center;justify-content:center;
 /* ── CONTACT ── */
 #contact{background:radial-gradient(ellipse 70% 50% at 50% 80%,rgba(0,200,150,0.10) 0%,transparent 70%),var(--bg2);text-align:center}
 .contact-big{font-size:clamp(36px,8vw,100px);font-weight:900;letter-spacing:-3px;color:#fff;line-height:1;margin-bottom:18px}
-.contact-big span{color:var(--green)}
+
+/* GOT AN IDEA — each word a gradient colour */
+.contact-big .w-got{
+  background:linear-gradient(135deg,#00c896,#00a07a);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.contact-big .w-an{
+  background:linear-gradient(135deg,#00c896,#00a07a);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.contact-big .w-idea{
+  background:linear-gradient(135deg,#4a9eff,#1a4fa0);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+
 .contact-sub{font-size:16px;color:var(--muted);max-width:460px;margin:0 auto 40px;line-height:1.8;font-weight:300}
 .contact-row{display:flex;gap:36px;justify-content:center;flex-wrap:wrap;margin-top:32px}
 .contact-lnk{font-size:11px;letter-spacing:2px;text-transform:none;color:var(--muted);text-decoration:none;font-weight:600;display:flex;align-items:center;gap:8px;transition:color .3s}
@@ -178,7 +213,10 @@ footer span{color:var(--green)}
 <!-- ══════════════ HOME ══════════════ -->
 <section id="home">
   <div class="section-content" style="text-align:center">
-    <h1 class="hero-name">PUMLA<br><span>NOFEMELE</span></h1>
+    <h1 class="hero-name">
+      <span class="name-first">PUMLA</span><br>
+      <span class="name-last">NOFEMELE</span>
+    </h1>
     <p class="hero-role">Cybersecurity & Digital Safety · Web Design · Research & Content Design</p>
     <p class="hero-desc">Social impact through research and digital work</p>
     <div class="hero-btns">
@@ -233,11 +271,10 @@ footer span{color:var(--green)}
   </div>
 </section>
 
-<!-- ══════════════ PROJECTS (ONE section — content swaps inside) ══════════════ -->
+<!-- ══════════════ PROJECTS ══════════════ -->
 <section id="projects">
   <div class="section-content">
 
-    <!-- Category intro + grid (shown by default) -->
     <div id="proj-intro">
       <div class="section-label">Selected Work</div>
       <h2 class="section-title">Projects</h2>
@@ -295,7 +332,6 @@ footer span{color:var(--green)}
       </div>
     </div><!-- /cat-grid-wrap -->
 
-    <!-- Detail panes (hidden until a card is clicked) -->
     <div id="proj-detail-inner" style="display:none">
 
       <button class="btn-back" onclick="closeDetail()">
@@ -355,51 +391,51 @@ footer span{color:var(--green)}
         </div>
         <div class="proj-grid" style="grid-template-columns:repeat(2,1fr);">
           <div class="proj-card">
-           <div class="proj-img-wrap">
-            <img src="images/Social Mood Label Poster23.jpg" class="proj-img" alt="Social Mood Label Digital Platform" loading="lazy">
-        </div>
-        <div class="proj-body">
-          <div class="proj-cat-tag">Project 1</div>
-          <h3 class="proj-title">Social Mood Label Digital Platform</h3>
-          <p class="proj-desc">A landing page for a social research and advocacy platform, bringing its brand identity, content and mission together in a clear, engaging digital experience.</p>
-          <a href="https://socialmoodlabel.netlify.app/" target="_blank" class="proj-link">View Project <i class="fas fa-arrow-right" style="font-size:10px"></i></a>
-        </div>
-      </div>
-      <div class="proj-card">
-        <div class="proj-img-wrap">
-          <img src="images/Neon Marketing Portfolio Landing Page.jpg" class="proj-img" alt="Marketing and Brand Portfolio" loading="lazy">
-      </div>
-      <div class="proj-body">
-        <div class="proj-cat-tag">Project 2</div>
-        <h3 class="proj-title">Marketing and Brand Portfolio</h3>
-        <p class="proj-desc">A collection of brand strategy, campaign execution, and event work delivered for a range of clients.</p>
-        <a href="https://lumkaportfolio.netlify.app/" target="_blank" class="proj-link">View Project <i class="fas fa-arrow-right" style="font-size:10px"></i></a>
-      </div>
-    </div>
-    <div class="proj-card">
-      <div class="proj-img-wrap">
-        <img src="images/gazillion goals where goals meet stories.webp" class="proj-img" alt="Gazillion Goals Football Website" loading="lazy">
-      </div>
-      <div class="proj-body">
-        <div class="proj-cat-tag">Project 3</div>
-        <h3 class="proj-title">Gazillion Goals Football Website</h3>
-        <p class="proj-desc">A dynamic football website, featuring bold design and an immersive fan experience.</p>
-        <a href="https://gazillion-goals.netlify.app/" target="_blank" class="proj-link">View Project <i class="fas fa-arrow-right" style="font-size:10px"></i></a>
-      </div>
-    </div>
-    <div class="proj-card">
-      <div class="proj-img-wrap">
-        <img src="images/4.webp" class="proj-img" alt="Royal Rabbits ECD Website" loading="lazy">
-      </div>
-      <div class="proj-body">
-        <div class="proj-cat-tag">Project 4</div>
-        <h3 class="proj-title">Royal Rabbits ECD Website</h3>
-        <p class="proj-desc">A clear, accessible, and welcoming website for an Early Childhood Development centre.</p>
-        <a href="https://royalrabbitsecd.netlify.app/" target="_blank" class="proj-link">View Project <i class="fas fa-arrow-right" style="font-size:10px"></i></a>
-      </div>
-    </div>
-   </div><!-- /proj-grid -->
-  </div><!-- /detail-web -->
+            <div class="proj-img-wrap">
+              <img src="images/Social Mood Label Poster23.jpg" class="proj-img" alt="Social Mood Label Digital Platform" loading="lazy">
+            </div>
+            <div class="proj-body">
+              <div class="proj-cat-tag">Project 1</div>
+              <h3 class="proj-title">Social Mood Label Digital Platform</h3>
+              <p class="proj-desc">A landing page for a social research and advocacy platform, bringing its brand identity, content and mission together in a clear, engaging digital experience.</p>
+              <a href="https://socialmoodlabel.netlify.app/" target="_blank" class="proj-link">View Project <i class="fas fa-arrow-right" style="font-size:10px"></i></a>
+            </div>
+          </div>
+          <div class="proj-card">
+            <div class="proj-img-wrap">
+              <img src="images/Neon Marketing Portfolio Landing Page.jpg" class="proj-img" alt="Marketing and Brand Portfolio" loading="lazy">
+            </div>
+            <div class="proj-body">
+              <div class="proj-cat-tag">Project 2</div>
+              <h3 class="proj-title">Marketing and Brand Portfolio</h3>
+              <p class="proj-desc">A collection of brand strategy, campaign execution, and event work delivered for a range of clients.</p>
+              <a href="https://lumkaportfolio.netlify.app/" target="_blank" class="proj-link">View Project <i class="fas fa-arrow-right" style="font-size:10px"></i></a>
+            </div>
+          </div>
+          <div class="proj-card">
+            <div class="proj-img-wrap">
+              <img src="images/gazillion goals where goals meet stories.webp" class="proj-img" alt="Gazillion Goals Football Website" loading="lazy">
+            </div>
+            <div class="proj-body">
+              <div class="proj-cat-tag">Project 3</div>
+              <h3 class="proj-title">Gazillion Goals Football Website</h3>
+              <p class="proj-desc">A dynamic football website, featuring bold design and an immersive fan experience.</p>
+              <a href="https://gazillion-goals.netlify.app/" target="_blank" class="proj-link">View Project <i class="fas fa-arrow-right" style="font-size:10px"></i></a>
+            </div>
+          </div>
+          <div class="proj-card">
+            <div class="proj-img-wrap">
+              <img src="images/4.webp" class="proj-img" alt="Royal Rabbits ECD Website" loading="lazy">
+            </div>
+            <div class="proj-body">
+              <div class="proj-cat-tag">Project 4</div>
+              <h3 class="proj-title">Royal Rabbits ECD Website</h3>
+              <p class="proj-desc">A clear, accessible, and welcoming website for an Early Childhood Development centre.</p>
+              <a href="https://royalrabbitsecd.netlify.app/" target="_blank" class="proj-link">View Project <i class="fas fa-arrow-right" style="font-size:10px"></i></a>
+            </div>
+          </div>
+        </div><!-- /proj-grid -->
+      </div><!-- /detail-web -->
 
       <!-- PUB -->
       <div id="detail-pub" class="detail-pane" style="display:none">
@@ -422,7 +458,7 @@ footer span{color:var(--green)}
           </div>
           <div class="proj-card">
             <div class="proj-img-wrap">
-              <img src="images/sonofmannownow.jpg" class="proj-img" alt=" What René Magritte Understood About Your Profile Picture Analysis:" loading="lazy">
+              <img src="images/sonofmannownow.jpg" class="proj-img" alt="What René Magritte Understood About Your Profile Picture" loading="lazy">
             </div>
             <div class="proj-body">
               <div class="proj-cat-tag">Project 2</div>
@@ -454,7 +490,10 @@ footer span{color:var(--green)}
 <section id="contact">
   <div class="section-content" style="text-align:center">
     <div class="section-label"><i class="fas fa-envelope"></i> &nbsp;Let's Connect</div>
-    <h2 class="contact-big">Got an<br><span>idea?</span></h2>
+    <h2 class="contact-big">
+      <span class="w-got">GOT</span> <span class="w-an">AN</span><br>
+      <span class="w-idea">IDEA?</span>
+    </h2>
     <p class="contact-sub">I'm open to new projects, collaborations, and conversations. Let's create something extraordinary.</p>
     <a href="mailto:pumlawebofwork@gmail.com" class="btn-primary">Say Hello</a>
     <div class="contact-row">
@@ -470,10 +509,8 @@ footer span{color:var(--green)}
 </footer>
 
 <script>
-// ── Side nav active state ──
 const allSections = document.querySelectorAll('section');
 const dots = document.querySelectorAll('.side-nav a');
-
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if(e.isIntersecting){
@@ -485,7 +522,6 @@ const obs = new IntersectionObserver(entries => {
 },{threshold:0.3});
 allSections.forEach(s => obs.observe(s));
 
-// ── Smooth scroll ──
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const href = a.getAttribute('href');
@@ -496,21 +532,19 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-// ── Open category detail ──
 function openDetail(cat){
-  document.getElementById('proj-intro').style.display     = 'none';
-  document.getElementById('cat-grid-wrap').style.display  = 'none';
+  document.getElementById('proj-intro').style.display    = 'none';
+  document.getElementById('cat-grid-wrap').style.display = 'none';
   document.getElementById('proj-detail-inner').style.display = 'block';
   document.querySelectorAll('.detail-pane').forEach(p => p.style.display = 'none');
-  document.getElementById('detail-' + cat).style.display  = 'block';
+  document.getElementById('detail-' + cat).style.display = 'block';
   document.getElementById('projects').scrollIntoView({behavior:'smooth', block:'start'});
 }
 
-// ── Back to category grid ──
 function closeDetail(){
   document.getElementById('proj-detail-inner').style.display = 'none';
-  document.getElementById('proj-intro').style.display     = 'block';
-  document.getElementById('cat-grid-wrap').style.display  = 'block';
+  document.getElementById('proj-intro').style.display    = 'block';
+  document.getElementById('cat-grid-wrap').style.display = 'block';
   document.getElementById('projects').scrollIntoView({behavior:'smooth', block:'start'});
 }
 </script>
